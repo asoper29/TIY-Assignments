@@ -40,8 +40,8 @@ var print = function (a,b,c) {
   add(a, b) === c);
 }
 
-for (var i = 0, i <= numLet.length, i++){
-  print("one",numLet[i]) === 1++)
+for (var i = 0; i < numLet.length; i++){
+  print(("one",numLet[i]) === i+1);
 }
 
 print("one", "zero", 1)
