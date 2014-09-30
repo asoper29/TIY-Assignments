@@ -14,7 +14,20 @@
  * commit message.
  */
 
+function convertToNumbers(x){
+  if(x === "one"){ return 1; }
+  if(x === "two"){ return 2; }
+  if(x === "three"){ return 3; }
+  if(x === "four"){ return 4; }
+  if(x === "five"){ return 5; }
+}
+
 var add = function(a, b) {
+  a = convertToNumbers(a);
+  b = convertToNumbers(b);
+
+  return a + b;
+
   if (a === "one"){
     if (b === "zero"){
       return 1;
