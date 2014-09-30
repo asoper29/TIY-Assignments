@@ -15,44 +15,34 @@
  */
 
 function convertToNumbers(x){
+  if(x === "zero"){ return 0; }
   if(x === "one"){ return 1; }
   if(x === "two"){ return 2; }
   if(x === "three"){ return 3; }
   if(x === "four"){ return 4; }
   if(x === "five"){ return 5; }
+  if(x === "six"){ return 6;}
+  if(x === "seven"){ return 7; }
+  if(x === "eight"){ return 8; }
+  if(x === "nine"){ return 9; }
+  if(x === "ten"){ return 10;}
 }
 
 var add = function(a, b) {
   a = convertToNumbers(a);
   b = convertToNumbers(b);
-
   return a + b;
-
-  if (a === "one"){
-    if (b === "zero"){
-      return 1;
-    }
-    if (b === "one"){
-      return 2;
-    }
-    if (b === "two"){
-      return 3;
-    }
-  }
-  if (a === "two"){
-    if (b === "two") {
-      return 4;
-    }
-  }
-  if (a === "three"){
-    if (b === "one"){
-      return 4;
-    }
-    if (b === "two"){
-      return 5;
-    }
-  }
 }
+
+var print = function (a,b,c) {
+  console.log('it should add "' + a + '" to "' + b + '": ',
+ add(a, b) === c);
+}
+
+
+print("one", "zero", 1)
+print("one", "one", 2)
+print("one", "two", 3)
 
 console.log('it should add "one" and "zero": ',
    add("one", "zero") === 1);
@@ -72,3 +62,5 @@ console.log('it should add "three" and "one": ',
 add("three", "one") === 4);
 console.log('it should add "three" and "two": ',
 add("three","two") === 5);
+console.log('it should add "three" and "six": ',
+add("three","six") === 9);
