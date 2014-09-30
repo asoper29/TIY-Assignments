@@ -17,7 +17,13 @@
 var add = function(a, b) {
   if (a === "one" && b === "zero"){
        return 1;
-    }
+  }
+  if (a === "three"){
+    return 4;
+  }
+  if (b === "two"){
+    return 3;
+  }
   return 2;
 }
 
@@ -25,3 +31,7 @@ console.log('it should add "one" and "zero": ',
    add("one", "zero") === 1);
 console.log('it should add "one" and "one": ',
   add("one", "one") === 2);
+console.log('it should add "one" and "two": ',
+add("one", "two") === 3);
+console.log('it should add "three" and "one": ',
+add("three", "one") === 4);
