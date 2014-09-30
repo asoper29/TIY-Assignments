@@ -13,6 +13,7 @@
  * ping-pong pairing, and commit often using `@username & @username` as the
  * commit message.
  */
+var numLet = ["zero","one","two","three","four","five","six","seven","eight","nine","ten"]
 
 function convertToNumbers(x){
   if(x === "zero"){ return 0; }
@@ -36,11 +37,11 @@ var add = function(a, b) {
 
 var print = function (a,b,c) {
   console.log('it should add "' + a + '" to "' + b + '": ',
- add(a, b) === c);
+  add(a, b) === c);
 }
 
-for (i=0, i<11, i++){
-  print("")
+for (var i = 0, i <= numLet.length, i++){
+  print("one",numLet[i]) === 1++)
 }
 
 print("one", "zero", 1)
