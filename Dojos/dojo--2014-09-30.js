@@ -39,28 +39,10 @@ var print = function (a,b,c) {
  add(a, b) === c);
 }
 
+for (i=0, i<11, i++){
+  print("")
+}
 
 print("one", "zero", 1)
 print("one", "one", 2)
 print("one", "two", 3)
-
-console.log('it should add "one" and "zero": ',
-   add("one", "zero") === 1);
-console.log('it should add "one" and "one": ',
-  add("one", "one") === 2);
-console.log('it should add "one" and "two": ',
-add("one", "two") === 3);
-console.log('it should add "two" and "zero": ',
-add("two","zero") === 2);
-console.log('it should add "two" and "one": ',
-add("two","one") === 3);
-console.log('it should add "two" and "two": ',
-add("two","two") === 4);
-console.log('it should add "three" and "zero": ',
-add("three", "zero") === 3);
-console.log('it should add "three" and "one": ',
-add("three", "one") === 4);
-console.log('it should add "three" and "two": ',
-add("three","two") === 5);
-console.log('it should add "three" and "six": ',
-add("three","six") === 9);
