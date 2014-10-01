@@ -27,6 +27,32 @@
 
  * Make up your own, too.
  */
+function numToLet(num) {
+  numbers = ["zero","one","two","three","four","five","six","seven","eight","nine"]
+  return numbers[num];
+}
+
+
+
+function test_num (a, b) {
+  console.log('Should convert ' + a + ' to ' + b + ': ',
+  numToLet(a) === b);
+}
+
+test_num(3, "three");
+
+
+/*  while (digits.length > 0) {
+    if(digits[0] === 1) {
+      ones = "one"
+    }
+  digits.shift();
+  console.log(ones);
+  }
+
+}
+
+convert(1);
 
 function numbersToLetters(a){
   if(a === 1){ return "one"; }
@@ -58,5 +84,4 @@ function numbersToLetters(a){
   if(a === 90){ return "ninety"; }
   if(a === 100){ return "one hundred"; }
 }
-
-console.log(numbersToLetters(90));
+*/
