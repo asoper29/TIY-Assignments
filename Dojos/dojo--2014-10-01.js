@@ -28,21 +28,26 @@
  * Make up your own, too.
  */
 
-function numbersToLetters(x){
-  if(x === 1){ return "one"; }
-  if(x === 2){ return "two"; }
-  if(x === 3){ return "three"; }
-  if(x === 4){ return "four"; }
-  if(x === 5){ return "five"; }
-  if(x === 6){ return "six"; }
-  if(x === 7){ return "seven"; }
-  if(x === 8){ return "eight"; }
-  if(x === 9){ return "nine"; }
-  if(x === 10){ return "ten"; }
+function numbersToLetters(a){
+  if(a === 1){ return "one"; }
+  if(a === 2){ return "two"; }
+  if(a === 3){ return "three"; }
+  if(a === 4){ return "four"; }
+  if(a === 5){ return "five"; }
+  if(a === 6){ return "six"; }
+  if(a === 7){ return "seven"; }
+  if(a === 8){ return "eight"; }
+  if(a === 9){ return "nine"; }
+  if(a === 10){ return "ten"; }
+}
 
-function test_convert(a)
-  console.log('Convert "' + 'a' +' to "' + b '": ',
-  convert("1") === "one")
 
-console.log('Convert "2" to "two": ',
- convert("2") === "two")
+function test_convert(a, b) {
+  console.log('Convert ' + a + ' to ' + numbersToLetters(a) + ' : ',
+  numbersToLetters(a) === b);
+}
+
+test_convert(1, "one")
+test_convert(2, "two")
+test_convert(10, "ten")
+test_convert(20, "twenty")
