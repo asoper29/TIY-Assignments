@@ -39,15 +39,24 @@ function numbersToLetters(a){
   if(a === 8){ return "eight"; }
   if(a === 9){ return "nine"; }
   if(a === 10){ return "ten"; }
+  if(a === 11){ return "eleven"; }
+  if(a === 12){ return "twelve"; }
+  if(a === 13){ return "thirteen"; }
+  if(a === 14){ return "fourteen"; }
+  if(a === 15){ return "fifteen"; }
+  if(a === 16){ return "sixteen"; }
+  if(a === 17){ return "seventeen"; }
+  if(a === 18){ return "eighteen"; }
+  if(a === 19){ return "nineteen"; }
+  if(a === 20){ return "twenty"; }
+  if(a === 30){ return "thirty"; }
+  if(a === 40){ return "fourty"; }
+  if(a === 50){ return "fifty"; }
+  if(a === 60){ return "sixty"; }
+  if(a === 70){ return "seventy"; }
+  if(a === 80){ return "eighty"; }
+  if(a === 90){ return "ninety"; }
+  if(a === 100){ return "one hundred"; }
 }
 
-
-function test_convert(a, b) {
-  console.log('Convert ' + a + ' to ' + numbersToLetters(a) + ' : ',
-  numbersToLetters(a) === b);
-}
-
-test_convert(1, "one")
-test_convert(2, "two")
-test_convert(10, "ten")
-test_convert(20, "twenty")
+console.log(numbersToLetters(90));
