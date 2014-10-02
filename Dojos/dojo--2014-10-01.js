@@ -27,9 +27,30 @@
 
  * Make up your own, too.
  */
+
+ function num2letter(num) {
+   var val = num.toString();
+
+   if (num < 20){
+     return ones[num];
+   }
+   if (num < 100){
+     return tens[val[0]] + ones[val[1]];
+   }
+ }
+
+
 function numToLet(num) {
-  numbers = ["zero","one","two","three","four","five","six","seven","eight","nine"]
-  return numbers[num];
+  onesToTeens = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+  twentyToHundred = ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
+
+  if (num.length = 1){
+    return onesToTeens[num];
+  }
+  else if (num.length = 2){
+    return "twenty";
+  }
+
 }
 
 
@@ -39,49 +60,5 @@ function test_num (a, b) {
   numToLet(a) === b);
 }
 
-test_num(3, "three");
-
-
-/*  while (digits.length > 0) {
-    if(digits[0] === 1) {
-      ones = "one"
-    }
-  digits.shift();
-  console.log(ones);
-  }
-
-}
-
-convert(1);
-
-function numbersToLetters(a){
-  if(a === 1){ return "one"; }
-  if(a === 2){ return "two"; }
-  if(a === 3){ return "three"; }
-  if(a === 4){ return "four"; }
-  if(a === 5){ return "five"; }
-  if(a === 6){ return "six"; }
-  if(a === 7){ return "seven"; }
-  if(a === 8){ return "eight"; }
-  if(a === 9){ return "nine"; }
-  if(a === 10){ return "ten"; }
-  if(a === 11){ return "eleven"; }
-  if(a === 12){ return "twelve"; }
-  if(a === 13){ return "thirteen"; }
-  if(a === 14){ return "fourteen"; }
-  if(a === 15){ return "fifteen"; }
-  if(a === 16){ return "sixteen"; }
-  if(a === 17){ return "seventeen"; }
-  if(a === 18){ return "eighteen"; }
-  if(a === 19){ return "nineteen"; }
-  if(a === 20){ return "twenty"; }
-  if(a === 30){ return "thirty"; }
-  if(a === 40){ return "fourty"; }
-  if(a === 50){ return "fifty"; }
-  if(a === 60){ return "sixty"; }
-  if(a === 70){ return "seventy"; }
-  if(a === 80){ return "eighty"; }
-  if(a === 90){ return "ninety"; }
-  if(a === 100){ return "one hundred"; }
-}
-*/
+test_num(9, "nine");
+test_num(30,"thirty");
