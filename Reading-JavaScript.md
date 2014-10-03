@@ -144,7 +144,7 @@ if (container.chartistSvg !== undefined)
 var array = [];
 ```
 
-* Array: array
+* Variable: array
 * Value: [];
 
 ```javascript
