@@ -10,15 +10,14 @@ board = [
 var cellState = false;
 function conway(cell, neighbors){
   var liveCells = 0;
-  for (var i = 0; i < neighbors.length; i++) {
-    if (neighbors[i] === true) {
+  neighbors.forEach(function(value, index){
+    if (value === true) {
       liveCells++;
     }
-  }
   if (cell === true) {
     if (liveCells < 2) {
       cellState =false;
-    }
+      }
     else if (liveCells < 4) {
       cellState = true;
     }
@@ -32,6 +31,7 @@ function conway(cell, neighbors){
       cellState = false;
     }
   }
+ });
   return cellState;
 }
 
@@ -74,6 +74,7 @@ function neighborsOf(board, x, y) {
   return neighbors;
 }
 
+neighbors.forEach(conway);
 
 //TICK FUNCTION TO ADVANCE THE BOARD
 function tick(board){
