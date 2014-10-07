@@ -91,6 +91,7 @@ function num2letter(val) {
   }
 }
 
+// Test Code
 
 var testCases = [
   [0, 'zero dollars and 00/100 cents'],
