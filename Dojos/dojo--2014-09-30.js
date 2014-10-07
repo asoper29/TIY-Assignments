@@ -35,13 +35,19 @@ var add = function(a, b) {
   return a + b;
 };
 
-var print = function (a,b,c) {
+var test = function (a,b,c) {
   console.log('it should add "' + a + '" to "' + b + '": ',
   add(a, b) === c);
 };
 
-for (var j = 1; j <= 10; j++){
+numLet.forEach(function(a, i){
+    numLet.forEach(function(b, j){
+      test(a, b, i + j);
+  });
+});
+
+/*for (var j = 1; j <= 10; j++){
   for (var i = 0; i < numLet.length; i++){
     print(numLet[j], numLet[i], j+i);
   }
-};
+};*/
