@@ -28,6 +28,9 @@
  * Make up your own, too.
  */
 
+ var cents = 0;
+ var dollars = 0;
+
 function num2letter(val) {
     ones =     ["zero", "one", "two", "three", "four", "five",
                 "six", "seven", "eight", "nine", "ten", "eleven",
@@ -47,8 +50,8 @@ function num2letter(val) {
                  "five thousand ", "six thousand ", "seven thousand ", "eight thousand ", "nine thousand "]
 
     val = Number(val).toFixed(2);
-    var cents = val.slice(-2);
-    var dollars = val.slice(0, -3);
+    cents = val.slice(-2);
+    dollars = val.slice(0, -3);
 
     if (dollars < 20){
       return ones[dollars] + " dollars and " + cents + "/100 cents";
@@ -89,6 +92,7 @@ function num2letter(val) {
         return thousands[val[0]] + hundreds[val[1]] + tens[val[2]] + ones[val[3]] + " dollars and " + cents + "/100 cents";
       }
   }
+  return cents;
 }
 
 // Test Code
@@ -120,7 +124,15 @@ var testCents = "/100 cents"
 
 describe('num2letter()', function() {
   it('should convert "0" to "zero" ', function() {
-    assert.equal(num2letter(0), 'zero' + suffix + "00" + testCents);
+    assert.equal(num2letter(0), 'zero' + suffix + cents + testCents);
+    assert.equal(num2letter(5), 'five' + suffix + cents + testCents);
+    assert.equal(num2letter(15), 'fifteen' + suffix + cents + testCents);
+    assert.equal(num2letter(20), 'twenty' + suffix + cents + testCents);
+    assert.equal(num2letter(99), 'ninety nine' + suffix + cents + testCents);
+    assert.equal(num2letter(100), 'one hundred' + suffix + cents + testCents);
+    assert.equal(num2letter(200), 'two hundred' + suffix + cents + testCents);
+    assert.equal(num2letter(550), 'five hundred fifty' + suffix + cents + testCents);
+    assert.equal(num2letter(999), 'nine hundred ninety nine' + suffix + cents + testCents);
   });
 })
 
