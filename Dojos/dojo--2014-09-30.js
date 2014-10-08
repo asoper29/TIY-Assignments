@@ -39,9 +39,18 @@ var add = function(a, b) {
 };
 
 describe('toNumber()', function(){
-  it('should convert 0 through 1', function() {
+  it('should convert "0" through "ten"', function() {
     assert.equal(toNumber("zero"), 0);
     assert.equal(toNumber("one"),  1);
+    assert.equal(toNumber("two"), 2);
+    assert.equal(toNumber("three"),  3);
+    assert.equal(toNumber("four"), 4);
+    assert.equal(toNumber("five"),  5);
+    assert.equal(toNumber("six"), 6);
+    assert.equal(toNumber("seven"),  7);
+    assert.equal(toNumber("eight"), 8);
+    assert.equal(toNumber("nine"),  9);
+    assert.equal(toNumber("ten"),  10);
   });
 });
 
