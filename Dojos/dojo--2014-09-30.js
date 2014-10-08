@@ -14,7 +14,7 @@
  * commit message.
  */
 
- var asser = require('assert')
+var asser = require('assert')
 
 var numLet = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
 
