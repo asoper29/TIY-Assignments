@@ -118,6 +118,19 @@ describe('conway', function(){
   });
 });
 
+describe('tick', function(){
+  it('should return a new board after applying rules from conway', function(){
+    assert.deepEqual(tick([
+      [ false, false, false ],
+      [ false, false, false ],
+      [ false, false, false ],
+    ]), [
+      [ false, false, false ],
+      [ false, false, false ],
+      [ false, false, false ],
+    ]);
+  })
+})
 
 //FORMATTING FOR TICK TEST EXPERTLY ENGINEERED BY ARI
 // function tick_test(board) {
