@@ -92,37 +92,47 @@ function num2letter(val) {
 }
 
 // Test Code
-
-var testCases = [
-  [0, 'zero dollars and 00/100 cents'],
-  [5, 'five dollars and 00/100 cents'],
-  [15, 'fifteen dollars and 00/100 cents'],
-  [20, 'twenty dollars and 00/100 cents'],
-  [99, 'ninety nine dollars and 00/100 cents'],
-  [100, 'one hundred dollars and 00/100 cents'],
-  [200, 'two hundred dollars and 00/100 cents'],
-  [550, 'five hundred fifty dollars and 00/100 cents'],
-  [999, 'nine hundred ninety nine dollars and 00/100 cents'],
-  [1000, 'one thousand dollars and 00/100 cents'],
-  [1100, 'one thousand one hundred dollars and 00/100 cents'],
-  [1110, 'one thousand one hundred ten dollars and 00/100 cents'],
-  [5000, 'five thousand dollars and 00/100 cents'],
-  [9999, 'nine thousand nine hundred ninety nine dollars and 00/100 cents'],
-  [1234.56, 'one thousand two hundred thirty four dollars and 56/100 cents'],
-  [100.10, 'one hundred dollars and 10/100 cents'],
-  [500.05, 'five hundred dollars and 05/100 cents'],
-  [999.990, 'nine hundred ninety nine dollars and 99/100 cents']
-];
+//
+// var testCases = [
+//   [0, 'zero dollars and 00/100 cents'],
+//   [5, 'five dollars and 00/100 cents'],
+//   [15, 'fifteen dollars and 00/100 cents'],
+//   [20, 'twenty dollars and 00/100 cents'],
+//   [99, 'ninety nine dollars and 00/100 cents'],
+//   [100, 'one hundred dollars and 00/100 cents'],
+//   [200, 'two hundred dollars and 00/100 cents'],
+//   [550, 'five hundred fifty dollars and 00/100 cents'],
+//   [999, 'nine hundred ninety nine dollars and 00/100 cents'],
+//   [1000, 'one thousand dollars and 00/100 cents'],
+//   [1100, 'one thousand one hundred dollars and 00/100 cents'],
+//   [1110, 'one thousand one hundred ten dollars and 00/100 cents'],
+//   [5000, 'five thousand dollars and 00/100 cents'],
+//   [9999, 'nine thousand nine hundred ninety nine dollars and 00/100 cents'],
+//   [1234.56, 'one thousand two hundred thirty four dollars and 56/100 cents'],
+//   [100.10, 'one hundred dollars and 10/100 cents'],
+//   [500.05, 'five hundred dollars and 05/100 cents'],
+//   [999.990, 'nine hundred ninety nine dollars and 99/100 cents']
+// ];
 
 var assert = require('assert');
+var suffix = " dollars and "
+var testCents = "/100 cents"
 
-testCases.forEach(function(testCase) {
-  var actual = num2letter(testCase[0]);
-  expected = testCase[1];
-  console.log('Number: ' + testCase[0] + ' was converted to "' + testCase[1] + '"');
-
-  assert.strictEqual(actual, expected);
+describe('num2letter()', function() {
+  it('should convert "0" to "zero" ', function() {
+    assert.equal(num2letter(0), 'zero' + suffix + "00" + testCents);
+  });
 })
+
+
+//
+// testCases.forEach(function(testCase) {
+//   var actual = num2letter(testCase[0]);
+//   expected = testCase[1];
+//   console.log('Number: ' + testCase[0] + ' was converted to "' + testCase[1] + '"');
+//
+//   assert.strictEqual(actual, expected);
+// })
 
 /*console.log(num2letter(0))
 console.log(num2letter(5))
