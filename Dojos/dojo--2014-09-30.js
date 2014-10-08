@@ -39,8 +39,9 @@ var add = function(a, b) {
 };
 
 describe('toNumber()', function(){
-  it('should convert "0" to "zero"', function() {
+  it('should convert 0 through 1', function() {
     assert.equal(toNumber("zero"), 0);
+    assert.equal(toNumber("one"),  1);
   });
 });
 
