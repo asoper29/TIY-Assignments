@@ -98,22 +98,28 @@ function tick(board){
 
 // TEST FUNCTION
 var assert = require('assert');
+//
+// function test(actual, expected, success){
+//     if (success === undefined) success = 'Success!';
+//     assert.strictEqual(actual, expected);
+//     console.log(success);
+// }
 
-function test(actual, expected, success){
-    if (success === undefined) success = 'Success!';
-    assert.strictEqual(actual, expected);
-    console.log(success);
-}
+describe('neighborsOf', function(){
+  it('should return an array of neighbor values given a cell', function(){
+    assert.deepEqual(neighborsOf(board, 0, 0), ([board[0][1], board[1][0], board[1][1]]));
+  });
+});
 
 //FORMATTING FOR TICK TEST EXPERTLY ENGINEERED BY ARI
-function tick_test(board) {
-  var after = tick(board)
-  console.log("-----------------------");
-  console.log(board);
-  console.log("-----------------------");
-  console.log(after);
-  console.log("-----------------------");
-}
+// function tick_test(board) {
+//   var after = tick(board)
+//   console.log("-----------------------");
+//   console.log(board);
+//   console.log("-----------------------");
+//   console.log(after);
+//   console.log("-----------------------");
+// }
 
 //TEST VARIABLES AND BOARDS
 var actual1 = neighborsOf(board, 0, 0)
@@ -168,10 +174,10 @@ var board7   = [
 
 
 //TESTS
-tick_test(board);
-tick_test(board2);
-tick_test(board3);
-tick_test(board4);
-tick_test(board5);
-tick_test(board6);
-tick_test(board7);
+// tick_test(board);
+// tick_test(board2);
+// tick_test(board3);
+// tick_test(board4);
+// tick_test(board5);
+// tick_test(board6);
+// tick_test(board7);
