@@ -14,11 +14,11 @@
  * commit message.
  */
 
-var asser = require('assert')
+var assert = require('assert')
 
 var numLet = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
 
-function convertToNumbers(x){
+function toNumber(x){
   if(x === "zero"){ return 0; }
   if(x === "one"){ return 1; }
   if(x === "two"){ return 2; }
@@ -38,7 +38,13 @@ var add = function(a, b) {
   return a + b;
 };
 
-var test = function (a,b,c) {
+describe('toNumber()', function(){
+  it('should convert "0" to "zero"', function() {
+    assert.equal(toNumber("zero"), 0);
+  });
+});
+
+/*var test = function (a,b,c) {
   console.log('it should add "' + a + '" to "' + b + '": ',
   add(a, b) === c);
 };
@@ -49,7 +55,7 @@ numLet.forEach(function(a, i){
   });
 });
 
-/*for (var j = 1; j <= 10; j++){
+for (var j = 1; j <= 10; j++){
   for (var i = 0; i < numLet.length; i++){
     print(numLet[j], numLet[i], j+i);
   }
