@@ -89,6 +89,7 @@ function tick(board){
          newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));
       });
   });
+
   var row1 = newBoard.splice(0, 3);
   var row2 = newBoard.splice(0, 3);
   board = [row1, row2, newBoard];
@@ -110,6 +111,13 @@ describe('neighborsOf', function(){
     assert.deepEqual(neighborsOf(board, 0, 0), ([board[0][1], board[1][0], board[1][1]]));
   });
 });
+
+describe('conway', function(){
+  it('should return the value of a cell based on its neighbors', function(){
+    assert.equal(conway(board[0][0], [board[0][1], board[1][0], board[1][1]]), false);
+  });
+});
+
 
 //FORMATTING FOR TICK TEST EXPERTLY ENGINEERED BY ARI
 // function tick_test(board) {
