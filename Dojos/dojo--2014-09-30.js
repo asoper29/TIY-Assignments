@@ -14,7 +14,7 @@
  * commit message.
  */
 
-var expect = require('chai').expect
+var assert = require('chai').assert;
 
 var numLet = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
 
