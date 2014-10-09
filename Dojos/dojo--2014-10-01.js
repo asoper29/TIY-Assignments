@@ -99,32 +99,34 @@ function num2letter(val) {
 //
 
 
-var assert = require('assert');
+var expect = require('chai').expect
 var suffix = " dollars and "
 var testCents = "/100 cents"
 
-describe('num2letter()', function() {
-  it('should convert "0" to "zero" ', function() {
-    assert.equal(num2letter(0), 'zero' + suffix + cents + testCents);
-    assert.equal(num2letter(5), 'five' + suffix + cents + testCents);
-    assert.equal(num2letter(15), 'fifteen' + suffix + cents + testCents);
-    assert.equal(num2letter(20), 'twenty' + suffix + cents + testCents);
-    assert.equal(num2letter(99), 'ninety nine' + suffix + cents + testCents);
-    assert.equal(num2letter(100), 'one hundred' + suffix + cents + testCents);
-    assert.equal(num2letter(200), 'two hundred' + suffix + cents + testCents);
-    assert.equal(num2letter(550), 'five hundred fifty' + suffix + cents + testCents);
-    assert.equal(num2letter(999), 'nine hundred ninety nine' + suffix + cents + testCents);
-    assert.equal(num2letter(1000), 'one thousand' + suffix + cents + testCents);
-    assert.equal(num2letter(1100), 'one thousand one hundred' + suffix + cents + testCents);
-    assert.equal(num2letter(1110), 'one thousand one hundred ten' + suffix + cents + testCents);
-    assert.equal(num2letter(5000), 'five thousand' + suffix + cents + testCents);
-    assert.equal(num2letter(9999), 'nine thousand nine hundred ninety nine' + suffix + cents + testCents);
-    assert.equal(num2letter(1234.56), 'one thousand two hundred thirty four' + suffix + cents + testCents);
-    assert.equal(num2letter(100.10), 'one hundred' + suffix + cents + testCents);
-    assert.equal(num2letter(500.05), 'five hundred' + suffix + cents + testCents);
-    assert.equal(num2letter(999.990), 'nine hundred ninety nine' + suffix + cents + testCents);
-  });
-})
+expect(num2letter(0).to.equal('zero' + suffix + cents + testCents);
+
+// describe('num2letter()', function() {
+//   it('should convert "0" to "zero" ', function() {
+//     assert.equal(num2letter(0), 'zero' + suffix + cents + testCents);
+//     assert.equal(num2letter(5), 'five' + suffix + cents + testCents);
+//     assert.equal(num2letter(15), 'fifteen' + suffix + cents + testCents);
+//     assert.equal(num2letter(20), 'twenty' + suffix + cents + testCents);
+//     assert.equal(num2letter(99), 'ninety nine' + suffix + cents + testCents);
+//     assert.equal(num2letter(100), 'one hundred' + suffix + cents + testCents);
+//     assert.equal(num2letter(200), 'two hundred' + suffix + cents + testCents);
+//     assert.equal(num2letter(550), 'five hundred fifty' + suffix + cents + testCents);
+//     assert.equal(num2letter(999), 'nine hundred ninety nine' + suffix + cents + testCents);
+//     assert.equal(num2letter(1000), 'one thousand' + suffix + cents + testCents);
+//     assert.equal(num2letter(1100), 'one thousand one hundred' + suffix + cents + testCents);
+//     assert.equal(num2letter(1110), 'one thousand one hundred ten' + suffix + cents + testCents);
+//     assert.equal(num2letter(5000), 'five thousand' + suffix + cents + testCents);
+//     assert.equal(num2letter(9999), 'nine thousand nine hundred ninety nine' + suffix + cents + testCents);
+//     assert.equal(num2letter(1234.56), 'one thousand two hundred thirty four' + suffix + cents + testCents);
+//     assert.equal(num2letter(100.10), 'one hundred' + suffix + cents + testCents);
+//     assert.equal(num2letter(500.05), 'five hundred' + suffix + cents + testCents);
+//     assert.equal(num2letter(999.990), 'nine hundred ninety nine' + suffix + cents + testCents);
+//   });
+// })
 
 
 // var testCases = [
