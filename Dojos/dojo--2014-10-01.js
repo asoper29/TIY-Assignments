@@ -103,7 +103,8 @@ var expect = require('chai').expect
 var suffix = " dollars and "
 var testCents = "/100 cents"
 
-expect(num2letter(0).to.equal('zero' + suffix + cents + testCents);
+expect(num2letter(0)).to.equal('zero dollars and 00/100 cents')
+expect(42).to.equal(42);
 
 // describe('num2letter()', function() {
 //   it('should convert "0" to "zero" ', function() {
