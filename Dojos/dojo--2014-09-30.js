@@ -20,20 +20,11 @@ var words = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven
 
 function fromEnglish(word){
   return words[word];
-  // if(x === "zero"){ return 0; }
-  // if(x === "one"){ return 1; }
-  // if(x === "two"){ return 2; }
-  // if(x === "three"){ return 3; }
-  // if(x === "four"){ return 4; }
-  // if(x === "five"){ return 5; }
-  // if(x === "six"){ return 6;}
-  // if(x === "seven"){ return 7; }
-  // if(x === "eight"){ return 8; }
-  // if(x === "nine"){ return 9; }
-  // if(x === "ten"){ return 10;}
 };
 
-
+function add(wordA, wordB){
+  return words[wordA] + words[wordB];
+};
 
 describe('fromEnglish()', function(){
   it('should convert "0" through "10"', function() {
@@ -48,5 +39,26 @@ describe('fromEnglish()', function(){
     assert.equal(fromEnglish("eight"), 8);
     assert.equal(fromEnglish("nine"),  9);
     assert.equal(fromEnglish("ten"),  10);
+  });
+});
+
+describe('add()', function(){
+  it('should add "0" to "0"', function() {
+    assert.equal(add("zero", "zero"), 0);
+  });
+  it('should add "1" to "2"', function() {
+    assert.equal(add("one", "two"), 3);
+  });
+  it('should add "3" to "4"', function() {
+    assert.equal(add("three", "four"), 7);
+  });
+  it('should add "5" to "6"', function() {
+    assert.equal(add("five", "six"), 11);
+  });
+  it('should add "7" to "8"', function() {
+    assert.equal(add("seven", "eight"), 15);
+  });
+  it('should add "9" to "10"', function() {
+    assert.equal(add("nine", "ten"), 19);
   });
 });
