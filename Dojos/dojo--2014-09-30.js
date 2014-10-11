@@ -28,6 +28,21 @@ describe('fromEnglish()', function(){
   it('should return "0" when given "zero" and "zero"', function() {
     assert.equal(stringCalc.fromEnglish('zero', 'zero'), 0);
   });
+  it('should return "0" when given "zero" and "one"', function() {
+    assert.equal(stringCalc.fromEnglish('zero', 'one'), 1);
+  });
+  it('should return "0" when given "zero" and "two"', function() {
+    assert.equal(stringCalc.fromEnglish('zero', 'two'), 2);
+  });
+  it('should return "0" when given "two" and "two"', function() {
+    assert.equal(stringCalc.fromEnglish('two', 'two'), 4);
+  });
+  it('should return "0" when given "five" and "five"', function() {
+    assert.equal(stringCalc.fromEnglish('five', 'five'), 10);
+  });
+  it('should return "0" when given "nine" and "ten"', function() {
+    assert.equal(stringCalc.fromEnglish('nine', 'ten'), 19);
+  });
 });
 
 // describe('add()', function(){
