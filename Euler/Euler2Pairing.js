@@ -42,6 +42,18 @@ function solution(){
 }
 
 /* === TEST CODE === */
-console.log(solution().fibonacci(100, 1, 2));
-console.log(solution().filterEvens(solution().fibonacci(100,1,2)))
-console.log(solution().sum(solution().filterEvens(solution().fibonacci(100,1,2))))
+// console.log(solution().fibonacci(100, 1, 2));
+// console.log(solution().filterEvens(solution().fibonacci(100,1,2)))
+// console.log(solution().sum(solution().filterEvens(solution().fibonacci(100,1,2))))
+
+function test (limit, prev, cur){
+  var testFib = solution().fibonacci(limit,prev,cur);
+  var testEvens = solution().filterEvens(testFib);
+  var testSum = solution().sum(testEvens);
+  console.log(testFib);
+  console.log(testEvens);
+  console.log(testSum)
+}
+
+test(100,1,2)
+test(4000000,1,2)
