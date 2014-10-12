@@ -49,7 +49,7 @@ var conwayGOL = {
       neighbors = [board[2][1], board[1][1], board[1][2]]
     }
     return neighbors;
-  }
+  },
 
   conway : function (cell, neighbors){
     var liveCells = 0;
@@ -76,7 +76,7 @@ var conwayGOL = {
       }
     });
     return cellState;
-  }
+  },
 
 
   tick : function (board){
@@ -92,12 +92,12 @@ var conwayGOL = {
     var row2 = newBoard.splice(0, 3);
     board = [row1, row2, newBoard];
     return board;
-  }
+  },
 }
 
 //DECLARING THE NEIGHBORS OF A CELL
 
-conwayGOL.neighbors.forEach(conwayGOL.conway);
+neighbors.forEach(conwayGOL.conway);
 
 // TEST FUNCTION
 var assert = require('chai').assert;
