@@ -44,24 +44,3 @@ describe('fromEnglish()', function(){
     assert.equal(stringCalc.fromEnglish('nine', 'ten'), 19);
   });
 });
-
-// describe('add()', function(){
-//   it('should add "0" to "0"', function() {
-//     assert.equal(add("zero", "zero"), 0);
-//   });
-//   it('should add "1" to "2"', function() {
-//     assert.equal(add("one", "two"), 3);
-//   });
-//   it('should add "3" to "4"', function() {
-//     assert.equal(add("three", "four"), 7);
-//   });
-//   it('should add "5" to "6"', function() {
-//     assert.equal(add("five", "six"), 11);
-//   });
-//   it('should add "7" to "8"', function() {
-//     assert.equal(add("seven", "eight"), 15);
-//   });
-//   it('should add "9" to "10"', function() {
-//     assert.equal(add("nine", "ten"), 19);
-//   });
-// });
