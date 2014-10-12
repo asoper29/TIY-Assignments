@@ -6,20 +6,68 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 // find the sum of the even-valued terms.
 
-function solution(prev, cur){
+// WORKING SOLUTION
+//
+// function solution(prev, cur){
+//   var sum = 0;
+//   for (cur = cur; cur < 4000000; cur = prev + cur){
+//     console.log('prev is ', prev, ' and cur is ',cur)
+//     prev = cur - prev;
+//     if (cur % 2 === 0){
+//       sum += cur;
+//     }
+//   }
+//   return sum;
+// }
+//
+// console.log(solution(1, 2));
+
+function solution(){
+  // CREATING VARIABLES FOR FIBONACCI SEQUENCE
+  var seq = [];
+  var even = [];
   var sum = 0;
-  for (cur = cur; cur < 4000000; cur = prev + cur){
-    console.log('prev is ', prev, ' and cur is ',cur)
-    prev = cur - prev;
-    if (cur % 2 === 0){
-      sum += cur;
+  return {
+    // STORE VALUES OF FIBONACCI SEQUENCE IN AN ARRAY
+    // (START WITH PREV AND CUR, CONTINUE LOOP WHILE CUR IS LESS THAN LIMIT )
+    fibonacci: function(limit, prev, cur){
+      for (cur = cur; cur < limit; cur = prev + cur){
+        prev = cur - prev;
+        seq.push(cur);
+      }
+      return seq;
+    },
+
+    // FILTERS THE EVEN NUMBERS OUT OF 'SEQ' ARRAY AND PUSHES THEM INTO 'EVEN' ARRAY
+    filterEven: function(seq){
+      seq.forEach(function(value){
+        if (value % 2 === 0){
+          even.push(value);
+        }
+      });
+      return even;
+    },
+    // FINDS THE SUM OF ALL NUMBERS IN 'EVEN' ARRAY
+    sumEvens: function(evens){
+      evens.forEach(function(value){
+        sum += value;
+      });
+      return sum;
     }
   }
-  return sum;
 }
 
-console.log(solution(1, 2));
+function test(limit, prev, cur){
+  var testFibo = solution().fibonacci(limit, prev, cur);
+  var testEven =  solution().filterEven(testFibo);
+  var testSum = solution().sumEvens(testEven);
+  console.log(testFibo);
+  console.log(testEven);
+  console.log(testSum);
+}
 
+test(100,1,2);
+test(4000000,1,2);
 
 
 
