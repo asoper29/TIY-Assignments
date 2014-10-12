@@ -2,9 +2,9 @@
 //The sum of these multiples is 23.
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-function add(){
+function add(x){
   var sum = 0;
-  for(var num = 0; num < 1000; num++){
+  for(var num = 0; num < x; num++){
     if (num % 3 === 0 || num % 5 === 0){
         sum += num;
     }
@@ -12,4 +12,4 @@ function add(){
   return sum;
 }
 
-console.log(add())
+console.log(add(1000))
