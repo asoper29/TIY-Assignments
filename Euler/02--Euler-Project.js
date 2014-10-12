@@ -48,8 +48,8 @@ function solution(){
       return even;
     },
     // FINDS THE SUM OF ALL NUMBERS IN 'EVEN' ARRAY
-    sumEvens: function(evens){
-      evens.forEach(function(value){
+    sumEven: function(even){
+      even.forEach(function(value){
         sum += value;
       });
       return sum;
@@ -60,7 +60,7 @@ function solution(){
 function test(limit, prev, cur){
   var testFibo = solution().fibonacci(limit, prev, cur);
   var testEven =  solution().filterEven(testFibo);
-  var testSum = solution().sumEvens(testEven);
+  var testSum = solution().sumEven(testEven);
   console.log(testFibo);
   console.log(testEven);
   console.log(testSum);
