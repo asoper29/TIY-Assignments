@@ -1,97 +1,309 @@
-#### Array.prototype.copyWithin() 
- ```javascript
-    arr.copyWithin(target, start[, end = this.length])
- ```
-  * Copies a sequence of array elements within an array, starting at a given point, and returns those values to a
-  * a target point within the array.
-
-#### Array.prototype.fill() 
-  * Fills all the elements of an array from a start index to an end index with a static value.
-
 #### Array.prototype.pop()
-  * Removes the last element from an array and returns that element.
+```javascript
+  arr.pop()
+  
+  var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+  console.log(myFish); // ['angel', 'clown', 'mandarin', 'sturgeon']
+
+  var popped = myFish.pop();
+
+  console.log(myFish); // ['angel', 'clown', 'mandarin' ] 
+
+  console.log(popped); // 'sturgeon'
+```
+* Removes the last element of an array ('pops' it off) and then returns that element.
+* In reference to the example, it takes the last element of the array, 'sturgeon', and removes it. It is then   
+* returned when called (assigned to variable 'popped' and then called).
 
 #### Array.prototype.push()
-  * Adds one or more elements to the end of an array and returns the new length of the array.
+```javascript
+  arr.push(element1, ..., elementN)
+  
+  var sports = ['soccer', 'baseball'];
+  var total = sports.push('football', 'swimming');
+
+  console.log(sports); // ['soccer', 'baseball', 'football', 'swimming']
+  console.log(total);  // 4
+```
+  * Adds an element(s) onto the end of an array and then returns the new length of the array.
 
 #### Array.prototype.reverse()
-  * Reverses the order of the elements of an array — the first becomes the last, and the last becomes the first.
+```javascript
+  arr.reverse()
+  
+  var myArray = ['one', 'two', 'three'];
+  myArray.reverse(); 
+
+  console.log(myArray) // ['three', 'two', 'one']
+```
+  * Takes the first element of an array and makes it the first, and the first becomes the last (reverses the order of   * all the elements in the array).
 
 #### Array.prototype.shift()
-  * Removes the first element from an array and returns that element.
+```javascript
+  arr.shift()
+  
+  var myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
+
+  console.log('myFish before: ' + myFish);
+
+  var shifted = myFish.shift();
+
+  console.log('myFish after: ' + myFish);
+  console.log('Removed this element: ' + shifted);
+  This example displays the following:
+
+  myFish before: angel,clown,mandarin,surgeon
+  myFish after: clown,mandarin,surgeon
+  Removed this element: angel
+
+```
+  * Opposite of pop. Removes the first element of the array and returns that value.
 
 #### Array.prototype.sort()
-  * Sorts the elements of an array in place and returns the array.
+```javascript
+  arr.sort([compareFunction])
+  
+  var fruit = ['apples', 'bananas', 'Cherries'];
+  fruit.sort(); // ['Cherries', 'apples', 'bananas'];
+
+  var scores = [1, 2, 10, 21]; 
+  scores.sort(); // [1, 10, 2, 21]
+
+  var things = ['word', 'Word', '1 Word', '2 Words'];
+  things.sort(); // ['1 Word', '2 Words', 'Word', 'word']
+  // In Unicode, numbers come before upper case letters, which come before lower case letters.
+
+```
+  * If `compareFunction` isn't specified, elements in the array are converted to strings and sorted by their Unicode
+  * code point value. 
 
 #### Array.prototype.splice()
-  * Adds and/or removes elements from an array.
+```javascript
+  array.splice(index, howMany[, element1[, ...[, elementN]]])
+  
+  // myFish is ['angel', 'clown', 'drum', 'mandarin', 'surgeon']
+  // removes 1 element from index 3
+  removed = myFish.splice(3, 1);
+  // myFish is ['angel', 'clown', 'drum', 'surgeon']
+  // removed is ['mandarin']
+```
+  * The splice method can be used to add or remove elements from an array. The `index` is the starting point for
+  * the changes. `howMany` is the number of elements from the array to be removed. `elementN` are the elements to be
+  * added to the array. If none are specified, then elements are only removed.
+ 
 #### Array.prototype.unshift()
-  * Adds one or more elements to the front of an array and returns the new length of the array.
+```javascript
+  arr.unshift([element1[, ...[, elementN]]])
+  
+  var arr = [1, 2];
+
+  arr.unshift(0); // result of call is 3, the new array length
+  // arr is [0, 1, 2]
+
+  arr.unshift(-2, -1); // = 5
+  // arr is [-2, -1, 0, 1, 2]
+```
+  * Inserts the given values as new elements at the beginning of an array. `elementN` signifies the elements to be
+  * added to the array. New length is returned after elements are added.
 
 
 ### Accessor methods
 * These methods do not modify the array and return some representation of the array.
 
 #### Array.prototype.concat()
-  * Returns a new array comprised of this array joined with other array(s) and/or value(s).
+```javascript
+  var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
+  
+  var alpha = ['a', 'b', 'c'],
+    numeric = [1, 2, 3];
 
-#### Array.prototype.contains() 
-  * Determines whether an array contains a certain element, returning true or false as appropriate.
+  var alphaNumeric = alpha.concat(numeric);
+
+  console.log(alphaNumeric); // Result: ['a', 'b', 'c', 1, 2, 3]
+```
+  * Creates a new array out of multiple old arrays and/or values. Combines the `alpha` and `numeric` arrays in the 
+  * examples into the new `alphaNumeric` array.
 
 #### Array.prototype.join()
-  * Joins all elements of an array into a string.
+```javascript
+  str = arr.join([separator = ','])
+  
+  var a = new Array('Wind', 'Rain', 'Fire');
+  var myVar1 = a.join();      // assigns 'Wind,Rain,Fire' to myVar1
+  var myVar2 = a.join(', ');  // assigns 'Wind, Rain, Fire' to myVar2
+  var myVar3 = a.join(' + '); // assigns 'Wind + Rain + Fire' to myVar3
+```
+  * Combines all elements of an array into a string. The `seperator` specifies how a string will be seperated.
 
 #### Array.prototype.slice()
-  * Extracts a section of an array and returns a new array.
+```javascript
+  arr.slice([begin[, end]])
+  
+  // Our good friend the citrus from fruits example
+  var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+  var citrus = fruits.slice(1, 3);
 
-#### Array.prototype.toSource() 
-  * Returns an array literal representing the specified array; you can use this value to create a new array. Overrides the Object.prototype.toSource() method.
+// citrus contains ['Orange','Lemon']
+```
+  * Extracts a section of an array and returns a new array. The elements extracted go from `begin` to `end` based on
+  * index values.
 
 #### Array.prototype.toString()
-  * Returns a string representing the array and its elements. Overrides the Object.prototype.toString() method.
+```javascript
+  arr.toString()
+  
+  var monthNames = ['Jan', 'Feb', 'Mar', 'Apr'];
+  var myVar = monthNames.toString(); // assigns 'Jan,Feb,Mar,Apr' to myVar.
+```
+  * Converts the elements of an array into a string and returns the new value.
 
 #### Array.prototype.toLocaleString()
-  * Returns a localized string representing the array and its elements. Overrides the Object.prototype.toLocaleString() method.
+```javascript
+  arr.toLocaleString();
+  
+  var number = 1337;
+  var date = new Date();
+  var myArr = [number, date, 'foo'];
+
+  var str = myArr.toLocaleString(); 
+
+  console.log(str); 
+  // prints '1.337,6.12.2013 19:37:35,foo'
+  // if run in a German (de-DE) locale with timezone Europe/Berlin
+```
+  * Returns the elements of an array as a string representation using locale-specific String seperators
+  * (e.g. comma or period).
 
 #### Array.prototype.indexOf()
-  * Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.
+```javascript
+  arr.indexOf(searchElement[, fromIndex = 0])
+  
+  var array = [2, 5, 9];
+  var index = array.indexOf(2);
+  // index is 0
+  index = array.indexOf(7);
+  // index is -1
+  index = array.indexOf(9, 2);
+  // index is 2
+  index = array.indexOf(2, -1);
+  // index is -1
+  index = array.indexOf(2, -3);
+  // index is 0
+```
+  * Searches an array starting at index `fromIndex` for an element `searchElement`. Compares the input to the elements
+  * of an array using strict equality and returns the first index at which `searchElement` can be found, or -1 if it
+  * can't be found.
 
 #### Array.prototype.lastIndexOf()
-  * Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
+```javascript
+  arr.lastIndexOf(searchElement[, fromIndex = arr.length])
+  
+  var array = [2, 5, 9, 2];
+  var index = array.lastIndexOf(2);
+  // index is 3
+  index = array.lastIndexOf(7);
+  // index is -1
+  index = array.lastIndexOf(2, 3);
+  // index is 3
+```
+  * Does the same thing as indexOf, except it searches for the greatest index at which `searchElement` can be found.
 
 
 ### Iteration methods
 * Several methods take as arguments functions to be called back while processing the array. When these methods are called, the length of the array is sampled, and any element added beyond this length from within the callback is not visited. Other changes to the array (setting the value of or deleting an element) may affect the results of the operation if the method visits the changed element afterwards. While the specific behavior of these methods in such cases is well-defined, you should not rely upon it so as not to confuse others who might read your code. If you must mutate the array, copy into a new array instead.
 
 #### Array.prototype.forEach()
-  * Calls a function for each element in the array.
+```javascript
+  arr.forEach(callback[, thisArg])
+  
+  function logArrayElements(element, index, array) {
+    console.log('a[' + index + '] = ' + element);
+  }
 
-#### Array.prototype.entries() 
-  * Returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+  // Note ellision, there is no member at 2 so it isn't visited
+  [2, 5, , 9].forEach(logArrayElements);
+  // logs:
+  // a[0] = 2
+  // a[1] = 5
+  // a[3] = 9
+```
+  * Calls a function for each element in the array. Executes the provided `callback` for each element within the
+  * array in ascending order.
 
 #### Array.prototype.every()
-  * Returns true if every element in this array satisfies the provided testing function.
+```javascript
+  arr.every(callback[, thisArg])
+  
+  function isBigEnough(element, index, array) {
+    return element >= 10;
+  }
+  var passed = [12, 5, 8, 130, 44].every(isBigEnough);
+  // passed is false
+  passed = [12, 54, 18, 130, 44].every(isBigEnough);
+  // passed is true
+```
+  * Will return true if every element of an array pass the test implemented by the provided function.
 
 #### Array.prototype.some()
-  * Returns true if at least one element in this array satisfies the provided testing function.
+```javascript
+  arr.some(callback[, thisArg])
+  
+  function isBigEnough(element, index, array) {
+    return element >= 10;
+  }
+  var passed = [2, 5, 8, 1, 4].some(isBigEnough);
+  // passed is false
+  passed = [12, 5, 8, 1, 4].some(isBigEnough);
+  // passed is true
+```
+  * Executes the callback function for each element of an array and returns true if any of the elements pass the
+  * function.
 
 #### Array.prototype.filter()
-  * Creates a new array with all of the elements of this array for which the provided filtering function returns true.
-
-#### Array.prototype.find() 
-  * Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found.
-
-#### Array.prototype.findIndex() 
-  * Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found.
-
-#### Array.prototype.keys() 
-  * Returns a new Array Iterator that contains the keys for each index in the array.
+```javascript
+  arr.filter(callback[, thisArg])
+  
+  function isBigEnough(element) {
+    return element >= 10;
+  }
+  var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+  // filtered is [12, 130, 44]
+```
+  * Executes the callback function for each element in the array and the elements are filtered and a new array is 
+  * created with the values which passed as true from the provided function.
 
 #### Array.prototype.map()
-  * Creates a new array with the results of calling a provided function on every element in this array.
+```javascript
+  arr.map(callback[, thisArg])
+  
+  var numbers = [1, 4, 9];
+  var roots = numbers.map(Math.sqrt);
+  // roots is now [1, 2, 3], numbers is still [1, 4, 9]
+```
+  * Executes the callback function on each element in the array and returns a new array with the values after the
+  * function was executed.
 
 #### Array.prototype.reduce()
-  * Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
+```javascript
+  arr.reduce(callback[, initialValue])
+  
+  var total = [0, 1, 2, 3].reduce(function(a, b) {
+  return a + b;
+  });
+// total == 6
+```
+  * Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a 
+  * string value. In the example, 0 is added to 1 which equals 1. Then 1 is added to 2 which equals 3. Finally,
+  * 3 is added to 3, giving you the total which equals 6.
 
 #### Array.prototype.reduceRight()
-  * Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
+```javascript
+  arr.reduceRight(callback[, initialValue])
+  
+  var total = [0, 1, 2, 3].reduceRight(function(a, b) {
+    return a + b;
+  });
+  // total == 6
+```
+  * Performs the same function as reduce, but goes from right-to-left.
