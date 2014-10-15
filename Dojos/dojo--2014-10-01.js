@@ -49,7 +49,7 @@ function checkWriting(){
         if (dollars < 20) {
           return ones[dollars] + checkEnd;
         }
-        if (dollars < 100) {
+        else if (dollars < 100) {
           if (dollars % 10 === 0) {
             return tens[dollars[0]] + checkEnd;
           } else {
