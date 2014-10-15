@@ -2,14 +2,24 @@
 //The sum of these multiples is 23.
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-function add(x){
-  var sum = 0;
-  for(var num = 0; num < x; num++){
-    if (num % 3 === 0 || num % 5 === 0){
-        sum += num;
+var assert = require('chai').assert;
+
+function solution(){
+  return {
+    solveFor: function(input){
+      var sum = 0;
+      for(var num = 0; num < input; num++){
+        if (num % 5 === 0 || num % 3 === 0){
+          sum += num;
+        }
+      }
+      return sum;
     }
   }
-  return sum;
 }
 
-console.log(add(1000))
+describe('Solution().solveFor', function(){
+  it('should take "1000" and return "233168"', function(){
+    assert.equal(solution().solveFor(1000), 233168);
+  });
+});
