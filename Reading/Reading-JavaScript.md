@@ -1,17 +1,19 @@
 #05--Reading-JavaScript
 
+####1
 ```javascript
 var result = []
 ```
 * Variable: result
 * Value: array []
 
-
+####2
 ```javascript
 // some constants for frequently used strings
 ```
 * Code Comment
 
+####3
 ```javascript
 var dFactor = (4 * (Math.sqrt(2) - 1) / 3) / (PI / 2)
 ```
@@ -22,7 +24,7 @@ var dFactor = (4 * (Math.sqrt(2) - 1) / 3) / (PI / 2)
 * Operators: *, -, /
 * Math: Math.sqrt
 
-
+####4
 ```javascript
 docMode8 = doc.documentMode === 8,
 ```
@@ -32,6 +34,7 @@ docMode8 = doc.documentMode === 8,
 * Property Access = .documentMode
 * Operators: = and ===
 
+####5
 ```javascript
 DIV = 'div',
 ABSOLUTE = 'absolute',
@@ -41,7 +44,7 @@ ABSOLUTE = 'absolute',
 * Variable: ABSOLUTE
 * Value: String 'absolute'
 
-
+####6
 ```javascript
 for (i = 0; i < len; i++)
 ```
@@ -49,6 +52,7 @@ for (i = 0; i < len; i++)
 * Variable: i
 * Operators: =, <, ++ (postfix increment)
 
+####7
 ```javascript
 if (args[0] === true) {
   ret = args[1];
@@ -59,6 +63,7 @@ if (args[0] === true) {
 * Array: args[0]
 * Comparison operator: ===
 
+####8
 ```javascript
 multiples = [1, 2, 2.5, 5, 10];
 ```
@@ -67,6 +72,7 @@ multiples = [1, 2, 2.5, 5, 10];
 * Integers: 1, 2, 5, 10
 * Floats: 2.5
 
+####9
 ```javascript
 defaultPrevented = true
 ```
@@ -74,6 +80,7 @@ defaultPrevented = true
 * Variable: defaultPrevented
 * Value: Boolean true
 
+####10
 ```javascript
 updateShadows: function (key, value)
 ```
@@ -82,7 +89,7 @@ updateShadows: function (key, value)
 * Value: function 
 * Arguments: (key, value)
 
-
+####11
 ```javascript
 function pick() {
 	var args = arguments,
@@ -95,7 +102,7 @@ function pick() {
 * Variable: args
 * Value: Arguments (i, arg, length = args.length)
 
-
+####12
 ```javascript
 for (i = 0; i < length; i++) {
 	arg = args[i];
@@ -105,13 +112,14 @@ for (i = 0; i < length; i++) {
 * Operators: =, <, ++
 * (start at 0, end when i < args.length, increment i)
 
-
+####13
 ```javascript
 interval *= magnitude;
 ```
 * Variable: interval, magnitude
 * Value: interval = interval * magnitude
 
+####14
 ```javascript
 if (this instanceof Bro) {
   this.obj = obj;
@@ -125,7 +133,7 @@ if (this instanceof Bro) {
 * Condition: this instanceof Bro
 * Statement: this.obj = obj;
 
-
+####15
 ```javascript
 var assert = require('assert');
 ```
@@ -134,12 +142,14 @@ var assert = require('assert');
 * Value: require('assert')
 * (call 'assert' from library)
 
+####16
 ```javascript
 if (container.chartistSvg !== undefined)
 ```
 * Conditional: if
 * Condition: container.chartistSvg !== (not equal to) undefined
 
+####17
 ```javascript
 var array = [];
 ```
@@ -147,6 +157,7 @@ var array = [];
 * Variable: array
 * Value: [];
 
+####18
 ```javascript
 if (dataArray[i][j] > highLow.high) {
             highLow.high = dataArray[i][j]
@@ -157,6 +168,7 @@ if (dataArray[i][j] > highLow.high) {
 * Statement: highLow.high = dataArray[i][j]
 * Multi-dimensional Array: dataArray[i][j]
 
+####19
 ```javascript
 while (true) {
         var length = Chartist.projectLength(svg, bounds.step / 2, bounds, options);
@@ -172,6 +184,7 @@ while (true) {
 * Condition: true
 * End loop: break;
 
+####20
 ```javascript
  if(toTheRight && direction === 'explode' ||
           !toTheRight && direction === 'implode') {
@@ -182,3 +195,90 @@ while (true) {
 * Conditions: toTheRight && direction === 'explode' || !toTheRight && direction === 'implode'
 * Boolean Logical Operators: && (and) || (or)
 * Statement: return 'start'
+
+####21
+```javascript
+  function chartType()
+```
+* function declaration 
+
+####22
+```javascript
+  configs = {
+  browserName: 'chrome',
+};
+```
+* variable configs is assigned the value object literal with property browserName
+
+####23
+```javascript
+  var assert = require('chai').assert;
+```
+* variable assert is assigned the value of function require input chai library with method assert
+
+####24
+```javascript
+  var errors = [];
+```
+* variable errors is assigned the value of empty array
+
+####25
+```javascript
+  describe('Solution().solveFor', function(){
+  it('should take "1000" and return "233168"', function(){
+    assert.equal(solution().solveFor(1000), 233168);
+  });
+});
+```
+* BDD test code. Describe the test and what it should return. Check if the expected value(solution().solveFor(1000) is
+* equal to the actual value (233168)
+
+####26
+```javascript
+  var msg = "fix($compile): something super mega extra giga tera long, maybe even longer and longer and longer... ";
+```
+* variable message is assigned the string value "..."
+
+####27
+```javascript
+  var TYPES = {
+  feat: true,
+  fix: true,
+  docs: true,
+  style: true,
+  refactor: true,
+  perf: true,
+  test: true,
+  chore: true,
+  revert: true
+};
+```
+* variable TYPES set equal to object literal with properties feat, fix, docs, style, refactor, perf, test, chore,
+* and revert
+
+####28
+```javascript
+  if (!match) {
+```
+* condtional with the condition not equal to match
+
+####29
+```javascript
+  var chessBoard = [
+['R','N','B','Q','K','B','N','R'],
+['P','P','P','P','P','P','P','P'],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+[' ',' ',' ',' ',' ',' ',' ',' '],
+['p','p','p','p','p','p','p','p'],
+['r','n','b','q','k','b','n','r']
+];
+```
+* variable chessboard is assigned a multi-dimensional array
+
+####30
+```javascript
+  var cash = value.slice(0,-3);
+```
+* value with method slice is assigned to the variable cash
