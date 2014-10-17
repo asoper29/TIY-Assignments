@@ -14,11 +14,11 @@ function solution(){
         }
       }
       return sum;
-    }
-  }
-}
+    } //END solveFor
+  } //END return
+} //END solution
 
-describe('Solution().solveFor', function(){
+describe('solution().solveFor', function(){
   it('should take "1000" and return "233168"', function(){
     assert.equal(solution().solveFor(1000), 233168);
   });

@@ -66,7 +66,7 @@ function solution(){
     }
   }
 }
-
+sum(100)
 
 
 // Test Solutions
@@ -114,7 +114,7 @@ describe('Project Euler #2', function(){
     it('should have a function for doing this', function(){
       assert.isFunction(S.solveFor);
     });
-    it('should beable to solve simple examples', function(){
+    it('should be able to solve simple examples', function(){
       assert.equal(S.solveFor(0), 0);
       assert.equal(S.solveFor(3), 2);
       assert.equal(S.solveFor(5), 2);
