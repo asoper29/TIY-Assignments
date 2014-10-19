@@ -152,71 +152,32 @@ var points = {
 
 function Chess(){
   pieces = [];
+
   moveTotal = 0;
-  pieces.push(this.Q = new Piece('Queen', 'Black'));
-  this.Q.setPosition([0,4]);
-  pieces.push(this.q = new Piece('Queen', 'White'));
-  this.q.setPosition([7,4]);
-  pieces.push(this.K = new Piece('King', 'Black'));
-  this.K.setPosition([0,3]);
-  pieces.push(this.k = new Piece('King', 'White'));
-  this.k.setPosition([7,3]);
-  pieces.push(this.P1 = new Piece('Pawn', 'Black'));
-  this.P1.setPosition([1,0]);
-  pieces.push(this.P2 = new Piece('Pawn', 'Black'));
-  this.P2.setPosition([1,1])
-  pieces.push(this.P3 = new Piece('Pawn', 'Black'));
-  this.P3.setPosition([1,2])
-  pieces.push(this.P4 = new Piece('Pawn', 'Black'));
-  this.P4.setPosition([1,3]);
-  pieces.push(this.P5 = new Piece('Pawn', 'Black'));
-  this.P5.setPosition([1,4]);
-  pieces.push(this.P6 = new Piece('Pawn', 'Black'));
-  this.P6.setPosition([1,5]);
-  pieces.push(this.P7 = new Piece('Pawn', 'Black'));
-  this.P7.setPosition([1,6]);
-  pieces.push(this.P8 = new Piece('Pawn', 'Black'));
-  this.P8.setPosition([1,7]);
-  pieces.push(this.p1 = new Piece('Pawn', 'White'));
-  this.p1.setPosition([6,0]);
-  pieces.push(this.p2 = new Piece('Pawn', 'White'));
-  this.p2.setPosition([6,1]);
-  pieces.push(this.p3 = new Piece('Pawn', 'White'));
-  this.p3.setPosition([6,2]);
-  pieces.push(this.p4 = new Piece('Pawn', 'White'));
-  this.p4.setPosition([6,3]);
-  pieces.push(this.p5 = new Piece('Pawn', 'White'));
-  this.p5.setPosition([6,4]);
-  pieces.push(this.p6 = new Piece('Pawn', 'White'));
-  this.p6.setPosition([6,5]);
-  pieces.push(this.p7 = new Piece('Pawn', 'White'));
-  this.p7.setPosition([6,6]);
-  pieces.push(this.p8 = new Piece('Pawn', 'White'));
-  this.p8.setPosition([6,7]);
-  pieces.push(this.B1 = new Piece('Bishop', 'Black'));
-  this.B1.setPosition([0,2]);
-  pieces.push(this.B2 = new Piece('Bishop', 'Black'));
-  this.B2.setPosition([0,5]);
-  pieces.push(this.b1 = new Piece('Bishop', 'White'));
-  this.b1.setPosition([7,2]);
-  pieces.push(this.b2 = new Piece('Bishop', 'White'));
-  this.b2.setPosition([7,5]);
-  pieces.push(this.N1 = new Piece('Knight', 'Black'));
-  this.N1.setPosition([0,1]);
-  pieces.push(this.N2 = new Piece('Knight', 'Black'));
-  this.N2.setPosition([0,6]);
-  pieces.push(this.n1 = new Piece('Knight', 'White'));
-  this.n1.setPosition([7,1]);
-  pieces.push(this.n2 = new Piece('Knight', 'White'));
-  this.n2.setPosition([7,6]);
-  pieces.push(this.R1 = new Piece('Rook', 'Black'));
-  this.R1.setPosition([0,0]);
-  pieces.push(this.R2 = new Piece('Rook', 'Black'));
-  this.R2.setPosition([0,7]);
-  pieces.push(this.r1 = new Piece('Rook', 'White'));
-  this.r1.setPosition([7,0]);
-  pieces.push(this.r2 = new Piece('Rook', 'White'));
-  this.r2.setPosition([7,7]);
+
+  var self = this;
+  collection = [
+    [self.K, 'King'   , 'black',0,3]  , [self.k,  'King'  , 'white',7,4],
+    [self.Q, 'Queen'  , 'black',0,4]  , [self.q,  'Queen' , 'white',7,3],
+    [self.R1, 'Rook'  , 'black',0,0]  , [self.r1, 'Rook'  , 'white',7,0],
+    [self.R2, 'Rook'  , 'black',0,7]  , [self.r2, 'Rook'  , 'white',7,7],
+    [self.N1, 'Knight', 'black',0,1]  , [self.n1, 'Knight', 'white',7,1],
+    [self.N2, 'Knight', 'black',0,6]  , [self.n2, 'Knight', 'white',7,6],
+    [self.B1, 'Bishop', 'black',0,2]  , [self.b1, 'Bishop', 'white',7,2],
+    [self.B2, 'Bishop', 'black',0,5]  , [self.b2, 'Bishop', 'white',7,5],
+    [self.P1, 'Pawn'  , 'black',1,0]  , [self.p1, 'Pawn'  , 'white',6,0],
+    [self.P2, 'Pawn'  , 'black',1,1]  , [self.p2, 'Pawn'  , 'white',6,1],
+    [self.P3, 'Pawn'  , 'black',1,2]  , [self.p3, 'Pawn'  , 'white',6,2],
+    [self.P4, 'Pawn'  , 'black',1,3]  , [self.p4, 'Pawn'  , 'white',6,3],
+    [self.P5, 'Pawn'  , 'black',1,4]  , [self.p5, 'Pawn'  , 'white',6,4],
+    [self.P6, 'Pawn'  , 'black',1,5]  , [self.p6, 'Pawn'  , 'white',6,5],
+    [self.P7, 'Pawn'  , 'black',1,6]  , [self.p7, 'Pawn'  , 'white',6,6],
+    [self.P8, 'Pawn'  , 'black',1,7]  , [self.p8, 'Pawn'  , 'white',6,7],
+  ]
+  collection.forEach(function(piece, index){
+      pieces.push(piece[0] = new Piece(piece[1], piece[2]))
+      piece[0].position = new Position(piece[3], piece[4])
+  })
 
 }//END Chess
 
@@ -275,7 +236,7 @@ Chess.prototype.display = function(){
   pieces.forEach(function(value, index){
     var x = pieces[index].position[0];
     var y = pieces[index].position[1];
-    board[x][y] = pieces[index].toString();
+    board[x][y] = pieces[index].letter;
   })
   var spacer = '+---+---+---+---+---+---+---+---+\n';
     return spacer +
