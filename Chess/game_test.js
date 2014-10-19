@@ -11,7 +11,7 @@ it('should return "Queen"', function(){
   assert.equal(chess.Q.getName(), "Queen");
 });
 it('should return "black"', function(){
-  assert.equal(chess.Q.getColor(), "black")
+  assert.equal(chess.Q.getColor(), "Black")
 })
 it('should return "R" for "Black Rook"', function(){
   assert.equal(chess.R1.toString(), "R")
@@ -31,7 +31,7 @@ it('should give me an "x = 0" and "y = 4" for Black Queen', function(){
 // console.log(chess)
 
 // console.log(chess.board)
-console.log(chess.move([1,0],[3,0]))
+chess.opening();
 // console.log(chess.board)
 // console.log(chess.Q)
 // console.log(chess.K)
