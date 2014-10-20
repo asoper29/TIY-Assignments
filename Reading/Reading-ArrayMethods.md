@@ -413,3 +413,15 @@ console.log([4, 6, 7, 12].findIndex(isPrime)); // 2
   // total == 6
 ```
   * Performs the same function as reduce, but goes from right-to-left.
+
+## Generic Methods
+```javascript
+  function isLetter(character) {
+    return character >= 'a' && character <= 'z';
+  }
+  
+  if (Array.prototype.every.call(str, isLetter)) {
+    console.log("The string '" + str + "' contains only letters!");
+  }
+```
+* Generic methods are array methods that can be used on strings or other array-like objects.
