@@ -99,11 +99,12 @@ module.exports = Chess, Position, Piece;
 
 
 var points = {
-  pawn: 1,
-  bishop: 3,
-  knight: 3,
-  rook: 5,
-  queen: 9
+  'King': 0,
+  'Pawn': 1,
+  'Bishop': 3,
+  'Knight': 3,
+  'Rook' : 5,
+  'Queen': 9
 }
 
 
@@ -155,23 +156,34 @@ Chess.prototype.getPlayer = function(item){
 //Move piece to destination and...?
 Chess.prototype.move = function (piece, destination){
   moveTotal++
+  var totalW = 0;
+  var totalB = 0;
+  var sum = 0;
+  self.pieces.some(function(){
+    if (self.pieces[sum].position[0] === destination[0] && self.pieces[sum].position[1] === destination[1]){
+      self.pieces.splice(sum, 1);
+    }
+    sum++
+  })
   self.pieces.forEach(function(value, index){
-    if (self.pieces[index].position[0] === piece[0] && self.pieces[index].position[1] === piece[1]){
-      self.pieces.forEach(function(x, y){
-        if (self.pieces[y].position[0] === destination[0] && self.pieces[y].position[1] === destination[1]){
-          console.log(self.pieces[y]);
-          console.log(self.pieces.splice(y, 1));
-          console.log(self.pieces[y]);
-          console.log(self.pieces.length);
-        }
-      })
-
-      self.pieces[index].position = destination;
-
-      console.log('Move ' + moveTotal + ': ' + self.pieces[index].color + ' ' + self.pieces[index].name + ' to '+ destination);
-      console.log(Chess.prototype.display());
+    if (self.pieces[index].color === 'White'){
+      totalW += points[self.pieces[index].name];
+    } else {
+      totalB += points[self.pieces[index].name];
     }
   })
+  sum = 0;
+  self.pieces.some(function(){
+    if (self.pieces[sum].position[0] === piece[0] && self.pieces[sum].position[1] === piece[1]){
+      self.pieces[sum].position = destination
+
+      console.log('Move ' + moveTotal + ': ' + self.pieces[sum].color + ' ' + self.pieces[sum].name + ' to '+ destination);
+      console.log('Score: W - ' + totalW + ' / B - ' + totalB)
+      console.log(Chess.prototype.display());
+    }
+    sum++
+  })
+
 }
 
 Chess.prototype.fullGame = function (){
@@ -197,52 +209,46 @@ Chess.prototype.fullGame = function (){
   this.move([0,1],[2,0]);
   this.move([4,4],[3,4]);
   this.move([2,5],[1,3]);
-  console.log(self.pieces);
   this.move([4,2],[3,3]);//White Pawn takes Black Pawn
-  console.log(self.pieces);
   this.move([2,0],[4,1]);
   this.move([6,2],[5,1]);
-  console.log(self.pieces);
   this.move([4,1],[3,3]);//Black Knight takes White Pawn
-  console.log(self.pieces);
   this.move([6,3],[4,4]);
   this.move([1,7],[2,7]);
   this.move([7,2],[6,3]);
   this.move([2,2],[3,2]);
-  console.log(self.pieces);
-  this.move([4,3],[3,2]); //White Pawn take Black Pawn
-  console.log(self.pieces);
-  // this.move([1,3],[3,2]);
-  // this.move([4,4],[3,2]);
-  // this.move([1,5],[3,2]);
-  // this.move([5,1],[4,0]);
-  // this.move([0,3],[1,4]);
-  // this.move([6,0],[5,0]);
-  // this.move([1,0],[3,0]);
-  // this.move([7,5],[7,4]);
-  // this.move([1,5],[3,5]);
-  // this.move([5,5],[4,7]);
-  // this.move([3,5],[4,5]);
-  // this.move([4,7],[2,6]);
-  // this.move([3,2],[6,5]);
-  // this.move([7,6],[7,7]);
-  // this.move([1,4],[1,5]);
-  // this.move([2,6],[0,5]);
-  // this.move([4,5],[5,5]);
-  // this.move([6,6],[5,7]);
-  // this.move([6,5],[7,4]);
-  // this.move([6,3],[7,4]);
-  // this.move([5,5],[6,5]);
-  // this.move([7,4],[6,5]);
-  // this.move([3,3],[4,5]);
-  // this.move([5,7],[6,6]);
-  // this.move([4,5],[6,6]);
-  // this.move([7,7],[7,6]);
-  // this.move([0,0],[0,5]);
-  // this.move([6,5],[2,1]);
-  // this.move([6,6],[5,4]);
-  // this.move([2,1],[5,4]);
-  // this.move([1,5],[5,5]);
+  this.move([4,3],[3,2]);//White Pawn takes Black Pawn
+  this.move([1,3],[3,2]);//Black Knight takes White Pawn
+  this.move([4,4],[3,2]);//White Knight takes Black Knight
+  this.move([1,4],[3,2]);//Black Bishop takes White Kniht
+  this.move([5,1],[4,0]);
+  this.move([0,3],[1,4]);
+  this.move([6,0],[5,0]);
+  this.move([1,0],[3,0]);
+  this.move([7,5],[7,4]);
+  this.move([1,5],[3,5]);
+  this.move([5,5],[4,7]);
+  this.move([3,5],[4,5]);
+  this.move([4,7],[2,6]);
+  this.move([3,2],[6,5]);//Black Bishop takes White Pawn
+  this.move([7,6],[7,7]);
+  this.move([1,4],[1,5]);
+  this.move([2,6],[0,5]);//White Knight takes Black Rook
+  this.move([4,5],[5,5]);
+  this.move([6,6],[5,7]);
+  this.move([6,5],[7,4]);//Black Bishop takes White Rook
+  this.move([6,3],[7,4]);//White Bishop takes Black Bishop
+  this.move([5,5],[6,5]);
+  this.move([7,4],[6,5]);//White Bishop takes White Pawn
+  this.move([3,3],[4,5]);
+  this.move([5,7],[6,6]);
+  this.move([4,5],[6,6]);//Black Knight takes White Bishop
+  this.move([7,7],[7,6]);
+  this.move([0,0],[0,5]);
+  this.move([6,5],[2,1]);//White Bishop takes Black Pawn
+  this.move([6,6],[5,4]);
+  this.move([2,1],[5,4]);//White Bishop takes Black Knight
+  this.move([1,5],[5,5]);
 }
 
 Chess.prototype.display = function(){
