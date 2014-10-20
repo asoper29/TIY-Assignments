@@ -1,10 +1,30 @@
-var Chess = require('./game.js');
-var Position = require('./game.js');
-var Piece = require('./game.js');
+var Chess = require('./game.js').Chess;
+var Position = require('./game.js').Position;
+var Piece = require('./game.js').Piece;
 
 var assert = require('chai').assert;
 var expect = require('chai').expect;
 var chess = new Chess;
+
+
+describe('Position', function(){
+  it('should have a function Position()', function(){
+    assert.isFunction(Position);
+  });
+})
+
+describe('Piece', function(){
+  it('should have a function Piece()', function(){
+    assert.isFunction(Piece);
+  });
+})
+
+describe('Chess', function(){
+  it('should have a function Chess()', function(){
+    assert.isFunction(Chess);
+  });
+})
+
 
 
 it('should return "King"', function(){

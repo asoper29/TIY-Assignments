@@ -1,4 +1,4 @@
-module.exports = Chess, Position, Piece;
+module.exports = {'Chess':Chess, 'Position': Position, 'Piece': Piece};
 
 
 var points = {
@@ -15,8 +15,8 @@ var points = {
 function Chess(){
 
   this.pieces = [];
-
-  moveTotal = 0;
+  this.moveTotal = 0;
+  this.turn = 1;
 
   collection = [
     [this.K,  'King'  , 'Black',0,4]  , [this.k,  'King'  , 'White',7,4],
@@ -58,16 +58,23 @@ Chess.prototype.getPlayer = function(item){
 //@param Position destination to move piece to
 //Move piece to destination and...?
 Chess.prototype.move = function (piece, destination){
-  moveTotal++
+  if (self.moveTotal % 2 === 0 && self.moveTotal != 0){
+    self.turn++
+  };
+
+  self.moveTotal++
+
   var totalW = 0;
   var totalB = 0;
   var sum = 0;
+
   self.pieces.some(function(){
     if (self.pieces[sum].position[0] === destination[0] && self.pieces[sum].position[1] === destination[1]){
       self.pieces.splice(sum, 1);
     }
     sum++
   })
+
   self.pieces.forEach(function(value, index){
     if (self.pieces[index].color === 'White'){
       totalW += points[self.pieces[index].name];
@@ -75,12 +82,13 @@ Chess.prototype.move = function (piece, destination){
       totalB += points[self.pieces[index].name];
     }
   })
+
   sum = 0;
   self.pieces.some(function(){
     if (self.pieces[sum].position[0] === piece[0] && self.pieces[sum].position[1] === piece[1]){
       self.pieces[sum].position = destination
 
-      console.log('Move ' + moveTotal + ': ' + self.pieces[sum].getColor() + ' ' + self.pieces[sum].getName() + ' to '+ destination);
+      console.log('Turn ' + self.turn + ': ' + self.getPlayer(self.pieces[sum].letter) + ' ' + self.pieces[sum].getName() + ' to '+ destination);
       console.log('Score: W - ' + totalW + ' / B - ' + totalB)
       console.log(Chess.prototype.display());
     }
@@ -224,47 +232,23 @@ Piece.prototype.setPosition = function (position){
 }
 
 //@return String representation of Piece
-Piece.prototype.toString = function (){
-  if( this.name === "Queen") {
-    if(this.color === "Black") {
-      return "Q";
-    } else {
-      return "q"
+Piece.prototype.toString = function(){
+    if( this.name === "Rook") {
+      return (this.color === "Black") ? "R" : "r";
     }
-  }
-  if( this.name === "Bishop") {
-    if(this.color === "Black") {
-      return "B"
-    } else {
-      return "b"
+    if( this.name === "Knight") {
+      return (this.color === "Black") ? "N" : "n";
     }
-  }
-  if( this.name === "Rook") {
-    if(this.color === "Black") {
-      return "R"
-    } else {
-      return "r"
+    if( this.name === "Bishop") {
+      return (this.color === "Black") ? "B" : "b";
     }
-  }
-  if( this.name === "King") {
-    if(this.color === "Black") {
-      return "K"
-    } else {
-      return "k"
+    if( this.name === "Queen") {
+       return (this.color === "Black") ? "Q" : "q";
     }
-  }
-  if( this.name === "Knight") {
-    if(this.color === "Black") {
-      return "N"
-    } else {
-      return "n"
+    if( this.name === "King") {
+      return (this.color === "Black") ? "K" : "k";
     }
-  }
-  if( this.name === "Pawn") {
-    if(this.color === "Black") {
-      return "P"
-    } else {
-      return "p"
+    if( this.name === "Pawn") {
+      return (this.color === "Black") ? "P" : "p";
     }
-  }
 }
