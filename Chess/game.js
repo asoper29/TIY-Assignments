@@ -157,9 +157,11 @@ Chess.prototype.move = function (piece, destination){
   moveTotal++
   self.pieces.forEach(function(value, index){
     if (self.pieces[index].position[0] === piece[0] && self.pieces[index].position[1] === piece[1]){
-      self.pieces.forEach(function(value, index){
-        if (self.pieces[index].position[0] === destination[0] && self.pieces[index].position[1] === destination[1]){
-          self.pieces.splice(index, 1);
+      self.pieces.forEach(function(x, y){
+        if (self.pieces[y].position[0] === destination[0] && self.pieces[y].position[1] === destination[1]){
+          console.log(self.pieces[y]);
+          console.log(self.pieces.splice(y, 1));
+          console.log(self.pieces[y]);
           console.log(self.pieces.length);
         }
       })
@@ -168,22 +170,79 @@ Chess.prototype.move = function (piece, destination){
 
       console.log('Move ' + moveTotal + ': ' + self.pieces[index].color + ' ' + self.pieces[index].name + ' to '+ destination);
       console.log(Chess.prototype.display());
-      //console.log(self.pieces.length);
     }
   })
 }
 
-Chess.prototype.opening = function (){
+Chess.prototype.fullGame = function (){
   this.move([6,3],[4,3]);
   this.move([0,6],[2,5]);
   this.move([6,2],[4,2]);
   this.move([1,4],[2,4]);
   this.move([6,6],[5,6]);
   this.move([1,3],[3,3]);
-  this.move([7,5],[6,6]);
-  this.move([0,5],[1,4]);
   this.move([7,6],[5,5]);
-  this.move([2,4],[3,3]);
+  this.move([0,5],[1,4]);
+  this.move([7,5],[6,6]);
+  this.move([0,7],[0,5]); //Black Castling part 1
+  this.move([0,4],[0,6]); //Black Castling part 2
+  this.move([7,7],[7,5]); //White Castling part 1
+  this.move([7,4],[7,6]); //White Castling part 2
+  this.move([1,2],[2,2]);
+  this.move([7,1],[6,3]);
+  this.move([1,1],[2,1]);
+  this.move([7,3],[6,2]);
+  this.move([0,2],[1,1]);
+  this.move([6,4],[4,4]);
+  this.move([0,1],[2,0]);
+  this.move([4,4],[3,4]);
+  this.move([2,5],[1,3]);
+  console.log(self.pieces);
+  this.move([4,2],[3,3]);//White Pawn takes Black Pawn
+  console.log(self.pieces);
+  this.move([2,0],[4,1]);
+  this.move([6,2],[5,1]);
+  console.log(self.pieces);
+  this.move([4,1],[3,3]);//Black Knight takes White Pawn
+  console.log(self.pieces);
+  this.move([6,3],[4,4]);
+  this.move([1,7],[2,7]);
+  this.move([7,2],[6,3]);
+  this.move([2,2],[3,2]);
+  console.log(self.pieces);
+  this.move([4,3],[3,2]); //White Pawn take Black Pawn
+  console.log(self.pieces);
+  // this.move([1,3],[3,2]);
+  // this.move([4,4],[3,2]);
+  // this.move([1,5],[3,2]);
+  // this.move([5,1],[4,0]);
+  // this.move([0,3],[1,4]);
+  // this.move([6,0],[5,0]);
+  // this.move([1,0],[3,0]);
+  // this.move([7,5],[7,4]);
+  // this.move([1,5],[3,5]);
+  // this.move([5,5],[4,7]);
+  // this.move([3,5],[4,5]);
+  // this.move([4,7],[2,6]);
+  // this.move([3,2],[6,5]);
+  // this.move([7,6],[7,7]);
+  // this.move([1,4],[1,5]);
+  // this.move([2,6],[0,5]);
+  // this.move([4,5],[5,5]);
+  // this.move([6,6],[5,7]);
+  // this.move([6,5],[7,4]);
+  // this.move([6,3],[7,4]);
+  // this.move([5,5],[6,5]);
+  // this.move([7,4],[6,5]);
+  // this.move([3,3],[4,5]);
+  // this.move([5,7],[6,6]);
+  // this.move([4,5],[6,6]);
+  // this.move([7,7],[7,6]);
+  // this.move([0,0],[0,5]);
+  // this.move([6,5],[2,1]);
+  // this.move([6,6],[5,4]);
+  // this.move([2,1],[5,4]);
+  // this.move([1,5],[5,5]);
 }
 
 Chess.prototype.display = function(){
