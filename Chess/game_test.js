@@ -7,45 +7,45 @@ var expect = require('chai').expect;
 var chess = new Chess;
 
 
-// it('should return "King"', function(){
-//   assert.equal(chess.pieces[0].getName(), "King");
-//  });
-// it('should return "Black"', function(){
-//   assert.equal(chess.pieces[0].getColor(), "Black")
-// })
-// it('should return "R" for "Black Rook"', function(){
-//   assert.equal(chess.pieces[4].toString(), "R")
-// })
-// it('should return "n" for "White Knight"', function(){
-//   assert.equal(chess.pieces[9].letter, "n")
-// })
-// it('chess.k.getName should equal "King"', function(){
-//   expect(chess.pieces[0].getName()).to.equal("King");
-// })
-// it('should give me an "x = 0" and "y = 4" for Black Queen', function(){
-//   assert.deepEqual(chess.pieces[2].position, [0 , 3])
-// })
-// it('should display the Catalan Opening', function (){
-//   assert.equal(chess.display(),
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "| R | N | B | Q | K |   |   | R |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "| P | P | P |   | B | P | P | P |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "|   |   |   |   | P | N |   |   |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "|   |   |   | P |   |   |   |   |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "|   |   | p | p |   |   |   |   |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "|   |   |   |   |   | n | p |   |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "| p | p |   |   | p | p | b | p |\n" +
-//           "+---+---+---+---+---+---+---+---+\n" +
-//           "| r | n | b | q | k |   |   | r |\n" +
-//           "+---+---+---+---+---+---+---+---+\n"
-//         );
-// });
+it('should return "King"', function(){
+  assert.equal(chess.pieces[0].getName(), "King");
+ });
+it('should return "Black"', function(){
+  assert.equal(chess.pieces[0].getColor(), "Black")
+})
+it('should return "R" for "Black Rook"', function(){
+  assert.equal(chess.pieces[4].toString(), "R")
+})
+it('should return "r" for "White Rook"', function(){
+  assert.equal(chess.pieces[5].letter, "r")
+})
+it('chess.k.getName should equal "King"', function(){
+  expect(chess.pieces[0].getName()).to.equal("King");
+})
+it('should give me an "x = 5" and "y = 5" for Black Queen', function(){
+  assert.deepEqual(chess.pieces[2].position, [5 , 5])
+})
+it('should display the Final Position', function (){
+  assert.equal(chess.display(),
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   |   |   | R | K |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   | B |   |   |   |   | P |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   |   | P |   |   | P |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| P |   |   |   | p |   |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| q |   |   |   |   |   |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| p |   |   |   | b | Q | p |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   | p |   |   |   |   |   | p |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| r |   |   |   |   |   | k |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n"
+        );
+});
 
 
 chess.fullGame();

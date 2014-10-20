@@ -1,100 +1,3 @@
-/*
-@constructor Chess: Setup a board with Pieces representing an initial chessboard.
-  @method getPlayer()
-    @return String either "White" or "black" representing current player
-  @method move(piece, destination): Move piece to destination and...?
-    @param Piece piece to move
-      @param Position destination to move piece to
-  @method opening(): Advance the board to Catalan Opening, Closed Variation
-  @method display()
-    @return String representation of board
-        R,N,B,Q,K,B,N,R
-        P,P,P,P,P,P,P,P
-         , , , , , , ,
-         , , , , , , ,
-         , , , , , , ,
-         , , , , , , ,
-        p,p,p,p,p,p,p,p
-        r,n,b,q,k,b,n,r
-@constructor Position(x,y): Represent a position on a chessboard with coordinates
-  usage: new Position(1,1)
-    @property Number x coordinate
-    @property Number y coordinate
-@constructor Piece(name, color): Represent a chesspiece on the board with name and color and appropriate starting position
-  usage: new Piece('Queen', 'black')
-  @method getName()
-    @return String name of Piece, e.g. 'Queen', 'Pawn'
-  @method getColor():
-    @return String player 'black' or 'white'
-  @method setPosition(position): Set Piece to position on board
-    @param Position position
-  @method toString()
-    @return String representation of Piece
-      example: "Q" === String(new Piece("Queen", "white"))
-      example: "r" === String(new Piece("Rook", "black"))
-
-var boardBegin = [
-  R = { name: 'Rook', color: 'black', position: [[0,0],[0,7]] },
-
-  B = { name: 'Bishop', color: 'black', position: },
-  N = { name: 'Knight', color: 'black', position:
-  },
-  K = {
-    name: 'King',
-    color: 'black',
-    position:
-  },
-  Q = {
-    name: 'Queen',
-    color: 'black',
-    position:
-  },
-  P = {
-    name: 'Pawn',
-    color: 'black',
-    position:
-  },
-  r = {
-    name: 'Rook',
-    color: 'white',
-    position: [[0,0],[0,7]]
-  },
-
-  b = {
-    name: 'Bishop',
-    color: 'white',
-    position:
-  },
-  n = {
-    name: 'Knight',
-    color: 'white',
-    position:
-  },
-  k = {
-    name: 'King',
-    color: 'white',
-    position:
-  },
-  q = {
-    name: 'Queen',
-    color: 'white',
-    position:
-  },
-  p = {
-    name: 'Pawn',
-    color: 'white',
-    position:
-  },
-];
-
-boardBegin.forEach(function(value, index){
-  pieces.push(boardBegin[index] = new Piece(boardBegin[index].name, boardBegin[index].color));
-  //console.log(value.position = boardBegin[index].position);
-  //console.log(Rook);
-});
-
-*/
-
 module.exports = Chess, Position, Piece;
 
 
@@ -116,8 +19,8 @@ function Chess(){
   moveTotal = 0;
 
   collection = [
-    [this.K, 'King'   , 'Black',0,4]  , [this.k,  'King'  , 'White',7,4],
-    [this.Q, 'Queen'  , 'Black',0,3]  , [this.q,  'Queen' , 'White',7,3],
+    [this.K,  'King'  , 'Black',0,4]  , [this.k,  'King'  , 'White',7,4],
+    [this.Q,  'Queen' , 'Black',0,3]  , [this.q,  'Queen' , 'White',7,3],
     [this.R1, 'Rook'  , 'Black',0,0]  , [this.r1, 'Rook'  , 'White',7,0],
     [this.R2, 'Rook'  , 'Black',0,7]  , [this.r2, 'Rook'  , 'White',7,7],
     [this.N1, 'Knight', 'Black',0,1]  , [this.n1, 'Knight', 'White',7,1],
@@ -177,7 +80,7 @@ Chess.prototype.move = function (piece, destination){
     if (self.pieces[sum].position[0] === piece[0] && self.pieces[sum].position[1] === piece[1]){
       self.pieces[sum].position = destination
 
-      console.log('Move ' + moveTotal + ': ' + self.pieces[sum].color + ' ' + self.pieces[sum].name + ' to '+ destination);
+      console.log('Move ' + moveTotal + ': ' + self.pieces[sum].getColor() + ' ' + self.pieces[sum].getName() + ' to '+ destination);
       console.log('Score: W - ' + totalW + ' / B - ' + totalB)
       console.log(Chess.prototype.display());
     }
