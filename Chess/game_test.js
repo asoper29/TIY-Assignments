@@ -47,4 +47,5 @@ it('should display the Catalan Opening', function (){
         );
 });
 
+
 chess.opening();

@@ -157,11 +157,18 @@ Chess.prototype.move = function (piece, destination){
   moveTotal++
   self.pieces.forEach(function(value, index){
     if (self.pieces[index].position[0] === piece[0] && self.pieces[index].position[1] === piece[1]){
+      self.pieces.forEach(function(value, index){
+        if (self.pieces[index].position[0] === destination[0] && self.pieces[index].position[1] === destination[1]){
+          self.pieces.splice(index, 1);
+          console.log(self.pieces.length);
+        }
+      })
 
       self.pieces[index].position = destination;
 
       console.log('Move ' + moveTotal + ': ' + self.pieces[index].color + ' ' + self.pieces[index].name + ' to '+ destination);
       console.log(Chess.prototype.display());
+      //console.log(self.pieces.length);
     }
   })
 }
@@ -176,6 +183,7 @@ Chess.prototype.opening = function (){
   this.move([7,5],[6,6]);
   this.move([0,5],[1,4]);
   this.move([7,6],[5,5]);
+  this.move([2,4],[3,3]);
 }
 
 Chess.prototype.display = function(){
