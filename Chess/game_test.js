@@ -23,9 +23,29 @@ it('chess.k.getName should equal "King"', function(){
   expect(chess.pieces[0].getName()).to.equal("King");
 })
 it('should give me an "x = 0" and "y = 4" for Black Queen', function(){
-  assert.deepEqual(chess.pieces[2].position, [0 , 4])
+  assert.deepEqual(chess.pieces[2].position, [0 , 3])
 })
-
+it('should display the Catalan Opening', function (){
+  assert.equal(chess.display(),
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| R | N | B | Q | K |   |   | R |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| P | P | P |   | B | P | P | P |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   |   | P | N |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   | P |   |   |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   | p | p |   |   |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   |   |   | n | p |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| p | p |   |   | p | p | b | p |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| r | n | b | q | k |   |   | r |\n" +
+          "+---+---+---+---+---+---+---+---+\n"
+        );
+});
 console.log(chess)
 
 // console.log(chess.board)

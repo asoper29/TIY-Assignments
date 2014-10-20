@@ -115,8 +115,8 @@ function Chess(){
   moveTotal = 0;
 
   collection = [
-    [this.K, 'King'   , 'Black',0,3]  , [this.k,  'King'  , 'White',7,4],
-    [this.Q, 'Queen'  , 'Black',0,4]  , [this.q,  'Queen' , 'White',7,3],
+    [this.K, 'King'   , 'Black',0,4]  , [this.k,  'King'  , 'White',7,4],
+    [this.Q, 'Queen'  , 'Black',0,3]  , [this.q,  'Queen' , 'White',7,3],
     [this.R1, 'Rook'  , 'Black',0,0]  , [this.r1, 'Rook'  , 'White',7,0],
     [this.R2, 'Rook'  , 'Black',0,7]  , [this.r2, 'Rook'  , 'White',7,7],
     [this.N1, 'Knight', 'Black',0,1]  , [this.n1, 'Knight', 'White',7,1],
@@ -292,7 +292,3 @@ Piece.prototype.toString = function (){
     }
   }
 }
-
-// TEST CODE
-
-var assert = require('chai').assert;
