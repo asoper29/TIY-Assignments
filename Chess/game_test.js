@@ -46,12 +46,5 @@ it('should display the Catalan Opening', function (){
           "+---+---+---+---+---+---+---+---+\n"
         );
 });
-console.log(chess)
 
-// console.log(chess.board)
 chess.opening();
-// console.log(chess.board)
-// console.log(chess.Q)
-// console.log(chess.K)
-
-// console.log(chess.Q.Position)
