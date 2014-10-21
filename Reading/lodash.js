@@ -1,3 +1,19 @@
+//Naive Implementations of Lo-Dash
+function testSome(test){
+  var testArr = [0,1,2,3,false,'true'];
+  for (var i = 0; i < testArr.length; i++) {
+    if (testArr[i] === test){
+      return true;
+      break;
+    } else {
+      return false;
+    }
+  }
+}
+
+testSome('false');
+
+//Messing Around with Lo-Dash and Chess
 var _ = require('lodash')
 
 
