@@ -282,3 +282,67 @@ while (true) {
   var cash = value.slice(0,-3);
 ```
 * value with method slice is assigned to the variable cash
+
+
+####31
+```javascript
+  module.exports = function (grunt) {
+```
+* 
+
+####32
+```javascript
+   grunt.initConfig({
+```
+* 
+
+####33
+```javascript
+  Chartist.Bar = function (query, data, options, responsiveOptions) {
+```
+* 
+
+####34
+```javascript
+  axisY: {
+          offset: 15
+         }
+```
+* 
+
+####35
+```javascript
+  bar = seriesGroups[i].elem
+```
+* 
+
+####36
+```javascript
+  function House(windows, doors) {
+```
+* 
+
+####37
+```javascript
+  if(item === item.toLowerCase())
+```
+* 
+
+####38
+```javascript
+  function Chess(){
+```
+* 
+
+####39
+```javascript
+  collection.forEach(function(piece, index){
+```
+* 
+
+####40
+```javascript
+  Chess.prototype.getPlayer = function(item){
+```
+* 
+
