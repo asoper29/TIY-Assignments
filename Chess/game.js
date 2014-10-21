@@ -1,17 +1,5 @@
 module.exports = {'Chess':Chess, 'Position': Position, 'Piece': Piece};
 
-
-var points = {
-  'King': 0,
-  'Pawn': 1,
-  'Bishop': 3,
-  'Knight': 3,
-  'Rook' : 5,
-  'Queen': 9
-}
-
-
-
 function Chess(){
 
   this.pieces = [];
@@ -64,35 +52,41 @@ Chess.prototype.move = function (piece, destination){
 
   self.moveTotal++
 
+  var points = {
+    'King': 0,
+    'Pawn': 1,
+    'Bishop': 3,
+    'Knight': 3,
+    'Rook' : 5,
+    'Queen': 9
+  }
+
   var totalW = 0;
   var totalB = 0;
-  var sum = 0;
 
-  self.pieces.some(function(){
-    if (self.pieces[sum].position[0] === destination[0] && self.pieces[sum].position[1] === destination[1]){
-      self.pieces.splice(sum, 1);
+  self.pieces.some(function(_piece, index){
+    if (_piece.position[0] === destination[0] && _piece.position[1] === destination[1]){
+      self.pieces.splice(index, 1);
     }
-    sum++
   })
 
-  self.pieces.forEach(function(value, index){
-    if (self.pieces[index].color === 'White'){
-      totalW += points[self.pieces[index].name];
+  self.pieces.forEach(function(_piece, index){
+    if (_piece.color === 'White'){
+      totalW += points[_piece.name];
     } else {
-      totalB += points[self.pieces[index].name];
+      totalB += points[_piece.name];
     }
   })
 
-  sum = 0;
-  self.pieces.some(function(){
-    if (self.pieces[sum].position[0] === piece[0] && self.pieces[sum].position[1] === piece[1]){
-      self.pieces[sum].position = destination
+  self.pieces.some(function(_piece, index){
+    if (_piece.position[0] === piece[0] && _piece.position[1] === piece[1]){
+      _piece.position = destination
 
-      console.log('Turn ' + self.turn + ': ' + self.getPlayer(self.pieces[sum].letter) + ' ' + self.pieces[sum].getName() + ' to '+ destination);
+      console.log('Turn ' + self.turn + ': ' + self.getPlayer(_piece.letter) + ' ' + _piece.getName() + ' to '+ destination);
       console.log('Score: W - ' + totalW + ' / B - ' + totalB)
       console.log(Chess.prototype.display());
     }
-    sum++
+
   })
 
 }
@@ -178,10 +172,10 @@ Chess.prototype.display = function(){
 
   var board = Array.matrix(8,8,0);
 
-  self.pieces.forEach(function(value, index){
-    var x = self.pieces[index].position[0];
-    var y = self.pieces[index].position[1];
-    board[x][y] = self.pieces[index].letter;
+  self.pieces.forEach(function(piece, index){
+    var x = piece.position[0];
+    var y = piece.position[1];
+    board[x][y] = piece.letter;
   })
   var spacer = '+---+---+---+---+---+---+---+---+\n';
     return spacer +
