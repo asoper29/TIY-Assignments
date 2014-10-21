@@ -142,7 +142,7 @@
       <p>If you are reading this, it is because your browser does not support the audio element.</p>
      </audio>
 ```
-[Example 1](http://xdonze.github.io/sweet_test.html) [Example 2](http://www.w3schools.com/tags/tag_audio.asp) [Example 3](http://www.quackit.com/html_5/tags/html_audio_tag.cfm)
+[Example 1](http://xdonze.github.io/sweet_test.html) | [Example 2](http://www.w3schools.com/tags/tag_audio.asp) | [Example 3](http://www.quackit.com/html_5/tags/html_audio_tag.cfm)
 
  * Used to embed sound content in documents. Can contain multiple audio sources.
  
