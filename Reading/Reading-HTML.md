@@ -11,7 +11,7 @@
   3) <p><em>By Susanna Miller, Campus Director</em></p>
   
 ```
- [Example 1 - 3](orlando.theironyard.com)
+ [Example 1 - 3](http://orlando.theironyard.com)
   
  * Represents a paragraph of text
 
