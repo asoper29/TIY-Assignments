@@ -29,7 +29,7 @@
   </div>
 
 ```
- [Example 1 - 3](orlando.theironyard.com)
+ [Example 1 - 3](http://orlando.theironyard.com)
 
  * Used as a generic container element if no other element is appropriate (<article>, <audio>, etc.). Typically used to
  * group like objects
@@ -67,7 +67,7 @@
 
 
 ```
-[Example 1 - 3](orlando.theironyard.com)
+[Example 1 - 3](http://orlando.theironyard.com)
 
  * Heading elements implement six different document headings (h1 being most important, h6 being least important).
 
@@ -85,7 +85,7 @@
     </ul>
 
 ```
-[Example 1 - 3](orlando.theironyard.com)
+[Example 1 - 3](http://orlando.theironyard.com)
 
  * Represents an unorder list of items. Unordered-list items are displayed with a precrding dot.
 
@@ -104,7 +104,7 @@
        <p><time pubdate datetime="2011-03-15"></time></p>
      </header>
 ```
-[Example 1](orlando.theironyard.com) | [Example 2](http://jekyllrb.com/) | [Example 3](http://www.w3schools.com/tags/tag_header.asp)
+[Example 1](http://orlando.theironyard.com) | [Example 2](http://jekyllrb.com/) | [Example 3](http://www.w3schools.com/tags/tag_header.asp)
  * Represents a group of introductory or navigational aids (nav bar, logo, etc.)
  
 ##### 7 
@@ -120,7 +120,7 @@
 
 
 ```
-  [Example 1](thepiratebay.se) | [Examples 2 & 3] (orlando.theironyard.com)
+  [Example 1](http://thepiratebay.se) | [Examples 2 & 3](http://orlando.theironyard.com)
  * Represents a document section with some interative controls (forms, buttons, etc.) to submit information to a web
  * server.
  
@@ -142,7 +142,7 @@
       <p>If you are reading this, it is because your browser does not support the audio element.</p>
      </audio>
 ```
-[Example 1](http://xdonze.github.io/sweet_test.html) [Example 2](http://www.w3schools.com/tags/tag_audio.asp) [Example 3](www.quackit.com/html_5/tags/html_audio_tag.cfm)
+[Example 1](http://xdonze.github.io/sweet_test.html) [Example 2](http://www.w3schools.com/tags/tag_audio.asp) [Example 3](http://www.quackit.com/html_5/tags/html_audio_tag.cfm)
 
  * Used to embed sound content in documents. Can contain multiple audio sources.
  
@@ -167,7 +167,7 @@
      </video>
 
 ```
-[Example 1](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_video) | [Example 2](www.w3schools.com/html/html5_video.asp) | [Example 3](www.quackit.com/html_5/tags/html_video_tag.cfm)
+[Example 1](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_video) | [Example 2](http://www.w3schools.com/html/html5_video.asp) | [Example 3](http://www.quackit.com/html_5/tags/html_video_tag.cfm)
 
  * Used to embed video content in documents. Can contain multiple video sources.
  
