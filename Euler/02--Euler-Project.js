@@ -23,51 +23,123 @@
 // console.log(solution(1, 2));
 
 function solution(){
-  // CREATING VARIABLES FOR FIBONACCI SEQUENCE
-  var seq = [];
-  var even = [];
-  var sum = 0;
   return {
+    solveFor: function(limit){
+      return this.sum(this.filterEvens(this.fibonacci(limit)));
+    },
+
     // STORE VALUES OF FIBONACCI SEQUENCE IN AN ARRAY
     // (START WITH PREV AND CUR, CONTINUE LOOP WHILE CUR IS LESS THAN LIMIT )
-    fibonacci: function(limit, prev, cur){
-      for (cur = cur; cur < limit; cur = prev + cur){
-        prev = cur - prev;
-        seq.push(cur);
+    fibonacci: function(limit){
+      var sequence = [1,2];
+      var prev = 1, curr = 2, temp;
+      if(limit < 3){
+        return [ ];
       }
-      return seq;
+      while (prev + curr < limit){
+        temp = prev + curr;
+        prev = curr;
+        curr = temp;
+        sequence.push(temp)
+      }
+      return sequence;
     },
 
     // FILTERS THE EVEN NUMBERS OUT OF 'SEQ' ARRAY AND PUSHES THEM INTO 'EVEN' ARRAY
-    filterEven: function(seq){
-      seq.forEach(function(value){
+    filterEvens: function(seq){
+      var even = [];
+      seq.forEach(function(value) {
         if (value % 2 === 0){
           even.push(value);
         }
-      });
+      })
       return even;
     },
+
     // FINDS THE SUM OF ALL NUMBERS IN 'EVEN' ARRAY
-    sumEven: function(even){
+    sum: function(even){
+      var sum = 0;
       even.forEach(function(value){
-        sum += value;
-      });
+        sum += value
+      })
       return sum;
     }
   }
 }
+sum(100)
 
-function test(limit, prev, cur){
-  var testFibo = solution().fibonacci(limit, prev, cur);
-  var testEven =  solution().filterEven(testFibo);
-  var testSum = solution().sumEven(testEven);
-  console.log(testFibo);
-  console.log(testEven);
-  console.log(testSum);
-}
 
-test(100,1,2);
-test(4000000,1,2);
+// Test Solutions
+var assert = require('chai').assert
+
+var S = solution();
+
+describe('Project Euler #2', function(){
+
+  it('should have a function for doing this', function(){
+    assert.isFunction(S.fibonacci);
+    assert.deepEqual(S.fibonacci(0), [ ]);
+  });
+  it('should calculate fibonacci numbers for a small sample', function(){
+    assert.deepEqual(S.fibonacci(5), [1,2,3]);
+    assert.deepEqual(S.fibonacci(10), [1,2,3,5,8]);
+    assert.deepEqual(S.fibonacci(20), [1,2,3,5,8,13]);
+    assert.deepEqual(S.fibonacci(40), [1,2,3,5,8,13,21,34]);
+  });
+  describe('filterEvens', function(){
+    it('should have a function for doing this', function(){
+      assert.isFunction(S.filterEvens);
+      assert.deepEqual(S.filterEvens([ ]), [ ]);
+    });
+    it('should filter out evens', function(){
+      assert.deepEqual(S.filterEvens([1]), [ ]);
+      assert.deepEqual(S.filterEvens([2]), [2]);
+      assert.deepEqual(S.filterEvens([1,2]),[2]);
+      assert.deepEqual(S.filterEvens([1,2,3]),[2]);
+    });
+  });
+  describe('sum values in a list', function(){
+    it('should have a function for doing this',function(){
+      assert.isFunction(S.sum);
+      assert.equal(S.sum([ ]), 0);
+    });
+    it('should sum items', function(){
+      assert.equal(S.sum([1]), 1);
+      assert.equal(S.sum([2]), 2);
+      assert.equal(S.sum([1,1]), 2);
+      assert.equal(S.sum([1,2]), 3);
+    });
+  });
+  describe('solveFor', function(){
+    it('should have a function for doing this', function(){
+      assert.isFunction(S.solveFor);
+    });
+    it('should be able to solve simple examples', function(){
+      assert.equal(S.solveFor(0), 0);
+      assert.equal(S.solveFor(3), 2);
+      assert.equal(S.solveFor(5), 2);
+      assert.equal(S.solveFor(15), 10);
+    });
+    it('should calculate the final answer', function(){
+
+      assert.equal(S.solveFor(4.0e6), 4613732);
+
+    });
+  });
+});
+
+
+// function test(limit, prev, cur){
+//   var testFibo = solution().fibonacci(limit, prev, cur);
+//   var testEven =  solution().filterEven(testFibo);
+//   var testSum = solution().sumEven(testEven);
+//   console.log(testFibo);
+//   console.log(testEven);
+//   console.log(testSum);
+// }
+//
+// test(100,1,2);
+// test(4000000,1,2);
 
 
 

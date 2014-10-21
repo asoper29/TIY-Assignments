@@ -1,16 +1,12 @@
 //DECLARING INITIAL BOARD STATE
-board = [
-  [ false, false, false ],
-  [ false, false, false ],
-  [ false, false, false ],
-]
+
 
 /*CONWAY FUNCTION - CHECKS NEIGHBORS OF A CELL AND DETERMINES
                     IF THE CELL SHOULD BE ALIVE OR DEAD*/
 
-var cellState = false;
 
-var neighbors = [];
+
+
 
 // var game = {
 //     board: undefined,
@@ -21,7 +17,14 @@ var neighbors = [];
 
 var conwayGOL = {
 
+  board = [
+    [ false, false, false ],
+    [ false, false, false ],
+    [ false, false, false ],
+  ]
+
   neighborsOf : function (board, x, y){
+    var neighbors = [];
     if (x === 0 && y === 0) {
       neighbors = [board[0][1], board[1][0], board[1][1]];
     }
@@ -60,13 +63,14 @@ var conwayGOL = {
 
   conway : function (cell, neighbors){
     var liveCells = 0;
+    var cellState = false;
     neighbors.forEach(function(value, index){
       if (value === true) {
         liveCells++;
       }
       if (cell === true) {
         if (liveCells < 2) {
-        cellState =false;
+        cellState = false;
         }
         else if (liveCells < 4) {
           cellState = true;

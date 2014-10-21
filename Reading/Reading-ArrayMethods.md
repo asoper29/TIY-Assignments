@@ -2,6 +2,25 @@
 
 * These methods modify the array:
 
+#### Array.prototype.copyWithin() - Experimental
+```javascript
+  arr.copyWithin(target, start[, end = this.length])
+  
+  [1, 2, 3, 4, 5].copyWithin(0, 3);
+   // [4, 5, 3, 4, 5]
+
+```
+* Copies a sequence of array elements within the array and places them starting at 'target'.
+
+#### Array.prototype.fill() - Experimental
+```javascript
+  arr.fill(value[, start = 0[, end = this.length]])
+  
+  [1, 2, 3].fill(4)               // [4, 4, 4]
+```
+* Fills the elements of an array with a static value from a start to an end index
+
+
 #### Array.prototype.pop()
 ```javascript
   arr.pop()
@@ -115,6 +134,25 @@
 ## Accessor methods
 * These methods do not modify the array and return some representation of the array.
 
+#### Array.prototype.contains() - Experimental
+```javascript
+  array.contains(searchElement[, fromIndex])
+  
+  [1, 2, 3].contains(2);     // true
+  [1, 2, 3].contains(4);     // false
+```
+* Determines whether an array has an element and returns a boolean value
+
+#### Array.prototype.toSource() - NOT STANDARD
+```javascript
+  arr.toSource()
+  
+  var alpha = new Array('a', 'b', 'c');
+
+  alpha.toSource();   //returns ['a', 'b', 'c']
+```
+* Returns the value of the array 
+
 #### Array.prototype.concat()
 ```javascript
   var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
@@ -217,6 +255,70 @@
 ## Iteration methods
 * Several methods take as arguments functions to be called back while processing the array. When these methods are called, the length of the array is sampled, and any element added beyond this length from within the callback is not visited. Other changes to the array (setting the value of or deleting an element) may affect the results of the operation if the method visits the changed element afterwards. While the specific behavior of these methods in such cases is well-defined, you should not rely upon it so as not to confuse others who might read your code. If you must mutate the array, copy into a new array instead.
 
+#### Array.prototype.entries() - Experimental
+```javascript
+  arr.entries()
+  
+  var arr = ['a', 'b', 'c'];
+  var eArr = arr.entries();
+  
+  console.log(eArr.next().value); // [0, 'a']
+  console.log(eArr.next().value); // [1, 'b']
+  console.log(eArr.next().value); // [2, 'c']
+```
+* The entries method returns a new array iterator that contains the key/value of the array element
+
+#### Array.prototype.find() - Experimental
+```javascript
+  arr.find(callback[, thisArg])
+  
+  function isPrime(element, index, array) {
+  var start = 2;
+  while (start <= Math.sqrt(element)) {
+    if (element % start++ < 1) {
+      return false;
+    }
+  }
+  return element > 1;
+}
+
+console.log([4, 6, 8, 12].find(isPrime)); // undefined, not found
+console.log([4, 5, 8, 12].find(isPrime)); // 5
+```
+* Finds a value in an array and returns it if the element satisfies the provided function
+
+#### Array.prototype.findIndex() - Experimental
+```javascript
+  arr.findIndex(callback[, thisArg])
+  
+  function isPrime(element, index, array) {
+  var start = 2;
+  while (start <= Math.sqrt(element)) {
+    if (element % start++ < 1) {
+      return false;
+    }
+  }
+  return element > 1;
+}
+
+console.log([4, 6, 8, 12].findIndex(isPrime)); // -1, not found
+console.log([4, 6, 7, 12].findIndex(isPrime)); // 2
+```
+* Returns an index of an array if the element of that idex satisfies the provided function
+
+#### Array.prototype.keys() - Experimental
+```javascript
+  arr.keys()
+  
+  var arr = ['a', 'b', 'c'];
+  var eArr = arr.keys();
+  
+  console.log(eArr.next().value); // 0
+  console.log(eArr.next().value); // 1
+  console.log(eArr.next().value); // 2
+```
+* Creates a new array iterator that returns the index values of an array
+
 #### Array.prototype.forEach()
 ```javascript
   arr.forEach(callback[, thisArg])
@@ -311,3 +413,15 @@
   // total == 6
 ```
   * Performs the same function as reduce, but goes from right-to-left.
+
+## Generic Methods
+```javascript
+  function isLetter(character) {
+    return character >= 'a' && character <= 'z';
+  }
+  
+  if (Array.prototype.every.call(str, isLetter)) {
+    console.log("The string '" + str + "' contains only letters!");
+  }
+```
+* Generic methods are array methods that can be used on strings or other array-like objects.
