@@ -193,8 +193,8 @@
  
 -----------------------------------------------------------------------------------
 
-### Block-level elements 
-#####(Block-level elements can only appear within a `<body>` element.)
+### In-Line elements 
+#####(Generally inline elements may contain only data and other inline elements)
 
 ##### 1
 ```html
