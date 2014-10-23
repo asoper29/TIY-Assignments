@@ -71,7 +71,13 @@ text-decoration-color
 ######11
 ```CSS
 font-family
+
+Examples:
+1) font-family: Delicious;
+2) font-family:verdana,sans-serif;
+3) font-family:tahoma;
 ```
+[Example 1 & 2](http://www.css3.info/preview/web-fonts-with-font-face/) | [Example 3](http://facebook.com)
 
 * Allows for a prioritized list of fonts family names and/or generic family names (serif, sans-serif, cursive) to be
 * specified for the selected element.
@@ -82,9 +88,10 @@ font-style
 
 Examples: 
 1) font-style: italic
-2)
+2) font-style: bold italic;
+3) font-style: normal;
 ```
-[Example 1](http://en.wikipedia.org/wiki/Game_of_Thrones)
+[Example 1](http://en.wikipedia.org/wiki/Game_of_Thrones) | [Example 2 & 3](http://nicewebtype.com/notes/2009/10/30/how-to-use-css-font-face/)
 
 * Allows italic or oblique faces to be selected within a font-family
 
@@ -104,7 +111,23 @@ Examples:
 ######14
 ```CSS
 @font-face
+
+Examples:
+1) @font-face {
+    font-family: 'MyWebFont';
+     src: url('webfont.eot'); /* IE9 Compat Modes */
+      src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfont.woff') format('woff'), /* Modern Browsers */
+         url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    }
+2) @font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+   }
+3) @font-face { font-family: Delicious; src: url('Delicious-Roman.otf'); } 
 ```
+[Example 1](http://css-tricks.com/snippets/css/using-font-face/) | [Example 2](http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp) | [Example 3](http://www.css3.info/preview/web-fonts-with-font-face/)
 
 * Allows authors to specify online fonts to display text on their web pages.
 
