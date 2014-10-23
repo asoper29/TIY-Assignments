@@ -208,3 +208,74 @@ Examples:
 ```
 [Example 1 & 2](https://plus.google.com/) | [Example 3](http://www.w3.org/Style/Examples/007/text-shadow.en.html)
 * Adds shadows to text. Each shadow has optional color, blur, and radius value. Multiple shadows can be applied.
+
+######21
+```CSS
+float
+
+Examples:
+1) img {
+    float: right;
+   }
+2) float:left;
+3) style="float:left;
+```
+[Example 1 - 3](http://www.w3schools.com/css/css_float.asp) 
+
+* Specifies that an element should be removed from the normal work flow and placed on the right or left side where the
+* text and inline elements will wrap around it.
+######22
+```CSS
+clear
+
+Examples: 
+1) <p style="clear:both">
+2) <br>
+    &nbsp;&nbsp;&nbsp;
+    clear: both;<br>
+3) <div style="clear:both;"></div>
+
+```
+[Example 1 - 3](http://www.w3schools.com/css/css_float.asp) 
+
+* Specifies whether an element can be next to a floating element or must be moved below it
+
+######23
+```CSS
+position
+
+Examples:
+1) <div style="width:98%;height:100px;position:relative">
+2) <p style="position:absolute;top:0px;right:0px">Positioning can be tricky sometimes!</p>
+3) position: fixed;
+```
+[Example 1 - 3](http://www.w3schools.com/css/css_positioning.asp)
+
+* Chooses alternative rules for positioning element. Allows you to set an elements position and even place elements
+* behind each other.
+
+######24
+```CSS
+<display>
+
+Examples:
+1) <div id='div-gpt-ad-1403595829794-4' style='width:728px;display:none;'>
+2) {display:none!important}
+3) display:flex;
+```
+[Example 1 - 3](https://plus.google.com/) 
+
+* Specifies the type of rendering box used for an element.
+
+######25
+```CSS
+border
+
+Examples:
+1) border:1px solid #ccc
+2) border:5px solid transparent
+3) border:1px solid #e5e5e5
+```
+[Example 1 - 3](https://plus.google.com/)
+
+* Shorthand property which allows you to set all of the properties for an elements border
