@@ -1,122 +1,14 @@
-/*
-@constructor Chess: Setup a board with Pieces representing an initial chessboard.
-  @method getPlayer()
-    @return String either "White" or "black" representing current player
-  @method move(piece, destination): Move piece to destination and...?
-    @param Piece piece to move
-      @param Position destination to move piece to
-  @method opening(): Advance the board to Catalan Opening, Closed Variation
-  @method display()
-    @return String representation of board
-        R,N,B,Q,K,B,N,R
-        P,P,P,P,P,P,P,P
-         , , , , , , ,
-         , , , , , , ,
-         , , , , , , ,
-         , , , , , , ,
-        p,p,p,p,p,p,p,p
-        r,n,b,q,k,b,n,r
-@constructor Position(x,y): Represent a position on a chessboard with coordinates
-  usage: new Position(1,1)
-    @property Number x coordinate
-    @property Number y coordinate
-@constructor Piece(name, color): Represent a chesspiece on the board with name and color and appropriate starting position
-  usage: new Piece('Queen', 'black')
-  @method getName()
-    @return String name of Piece, e.g. 'Queen', 'Pawn'
-  @method getColor():
-    @return String player 'black' or 'white'
-  @method setPosition(position): Set Piece to position on board
-    @param Position position
-  @method toString()
-    @return String representation of Piece
-      example: "Q" === String(new Piece("Queen", "white"))
-      example: "r" === String(new Piece("Rook", "black"))
-
-var boardBegin = [
-  R = { name: 'Rook', color: 'black', position: [[0,0],[0,7]] },
-
-  B = { name: 'Bishop', color: 'black', position: },
-  N = { name: 'Knight', color: 'black', position:
-  },
-  K = {
-    name: 'King',
-    color: 'black',
-    position:
-  },
-  Q = {
-    name: 'Queen',
-    color: 'black',
-    position:
-  },
-  P = {
-    name: 'Pawn',
-    color: 'black',
-    position:
-  },
-  r = {
-    name: 'Rook',
-    color: 'white',
-    position: [[0,0],[0,7]]
-  },
-
-  b = {
-    name: 'Bishop',
-    color: 'white',
-    position:
-  },
-  n = {
-    name: 'Knight',
-    color: 'white',
-    position:
-  },
-  k = {
-    name: 'King',
-    color: 'white',
-    position:
-  },
-  q = {
-    name: 'Queen',
-    color: 'white',
-    position:
-  },
-  p = {
-    name: 'Pawn',
-    color: 'white',
-    position:
-  },
-];
-
-boardBegin.forEach(function(value, index){
-  pieces.push(boardBegin[index] = new Piece(boardBegin[index].name, boardBegin[index].color));
-  //console.log(value.position = boardBegin[index].position);
-  //console.log(Rook);
-});
-
-*/
-
-module.exports = Chess, Position, Piece;
-
-
-var points = {
-  pawn: 1,
-  bishop: 3,
-  knight: 3,
-  rook: 5,
-  queen: 9
-}
-
-
+module.exports = {'Chess':Chess, 'Position': Position, 'Piece': Piece};
 
 function Chess(){
 
   this.pieces = [];
-
-  moveTotal = 0;
+  this.moveTotal = 0;
+  this.turn = 1;
 
   collection = [
-    [this.K, 'King'   , 'Black',0,4]  , [this.k,  'King'  , 'White',7,4],
-    [this.Q, 'Queen'  , 'Black',0,3]  , [this.q,  'Queen' , 'White',7,3],
+    [this.K,  'King'  , 'Black',0,4]  , [this.k,  'King'  , 'White',7,4],
+    [this.Q,  'Queen' , 'Black',0,3]  , [this.q,  'Queen' , 'White',7,3],
     [this.R1, 'Rook'  , 'Black',0,0]  , [this.r1, 'Rook'  , 'White',7,0],
     [this.R2, 'Rook'  , 'Black',0,7]  , [this.r2, 'Rook'  , 'White',7,7],
     [this.N1, 'Knight', 'Black',0,1]  , [this.n1, 'Knight', 'White',7,1],
@@ -154,28 +46,114 @@ Chess.prototype.getPlayer = function(item){
 //@param Position destination to move piece to
 //Move piece to destination and...?
 Chess.prototype.move = function (piece, destination){
-  moveTotal++
-  self.pieces.forEach(function(value, index){
-    if (self.pieces[index].position[0] === piece[0] && self.pieces[index].position[1] === piece[1]){
+  if (self.moveTotal % 2 === 0 && self.moveTotal != 0){
+    self.turn++
+  };
 
-      self.pieces[index].position = destination;
+  self.moveTotal++
 
-      console.log('Move ' + moveTotal + ': ' + self.pieces[index].color + ' ' + self.pieces[index].name + ' to '+ destination);
-      console.log(Chess.prototype.display());
+  var points = {
+    'King': 0,
+    'Pawn': 1,
+    'Bishop': 3,
+    'Knight': 3,
+    'Rook' : 5,
+    'Queen': 9
+  }
+
+  var totalW = 0;
+  var totalB = 0;
+
+  self.pieces.some(function(_piece, index){
+    if (_piece.position[0] === destination[0] && _piece.position[1] === destination[1]){
+      self.pieces.splice(index, 1);
     }
   })
+
+  self.pieces.forEach(function(_piece, index){
+    if (_piece.color === 'White'){
+      totalW += points[_piece.name];
+    } else {
+      totalB += points[_piece.name];
+    }
+  })
+
+  self.pieces.some(function(_piece, index){
+    if (_piece.position[0] === piece[0] && _piece.position[1] === piece[1]){
+      _piece.position = destination
+
+      console.log('Turn ' + self.turn + ': ' + self.getPlayer(_piece.letter) + ' ' + _piece.getName() + ' to '+ destination);
+      console.log('Score: W - ' + totalW + ' / B - ' + totalB)
+      console.log(Chess.prototype.display());
+    }
+
+  })
+
 }
 
-Chess.prototype.opening = function (){
+Chess.prototype.fullGame = function (){
   this.move([6,3],[4,3]);
   this.move([0,6],[2,5]);
   this.move([6,2],[4,2]);
   this.move([1,4],[2,4]);
   this.move([6,6],[5,6]);
   this.move([1,3],[3,3]);
-  this.move([7,5],[6,6]);
-  this.move([0,5],[1,4]);
   this.move([7,6],[5,5]);
+  this.move([0,5],[1,4]);
+  this.move([7,5],[6,6]);
+  this.move([0,7],[0,5]); //Black Castling part 1
+  this.move([0,4],[0,6]); //Black Castling part 2
+  this.move([7,7],[7,5]); //White Castling part 1
+  this.move([7,4],[7,6]); //White Castling part 2
+  this.move([1,2],[2,2]);
+  this.move([7,1],[6,3]);
+  this.move([1,1],[2,1]);
+  this.move([7,3],[6,2]);
+  this.move([0,2],[1,1]);
+  this.move([6,4],[4,4]);
+  this.move([0,1],[2,0]);
+  this.move([4,4],[3,4]);
+  this.move([2,5],[1,3]);
+  this.move([4,2],[3,3]);//White Pawn takes Black Pawn
+  this.move([2,0],[4,1]);
+  this.move([6,2],[5,1]);
+  this.move([4,1],[3,3]);//Black Knight takes White Pawn
+  this.move([6,3],[4,4]);
+  this.move([1,7],[2,7]);
+  this.move([7,2],[6,3]);
+  this.move([2,2],[3,2]);
+  this.move([4,3],[3,2]);//White Pawn takes Black Pawn
+  this.move([1,3],[3,2]);//Black Knight takes White Pawn
+  this.move([4,4],[3,2]);//White Knight takes Black Knight
+  this.move([1,4],[3,2]);//Black Bishop takes White Kniht
+  this.move([5,1],[4,0]);
+  this.move([0,3],[1,4]);
+  this.move([6,0],[5,0]);
+  this.move([1,0],[3,0]);
+  this.move([7,5],[7,4]);
+  this.move([1,5],[3,5]);
+  this.move([5,5],[4,7]);
+  this.move([3,5],[4,5]);
+  this.move([4,7],[2,6]);
+  this.move([3,2],[6,5]);//Black Bishop takes White Pawn
+  this.move([7,6],[7,7]);
+  this.move([1,4],[1,5]);
+  this.move([2,6],[0,5]);//White Knight takes Black Rook
+  this.move([4,5],[5,5]);
+  this.move([6,6],[5,7]);
+  this.move([6,5],[7,4]);//Black Bishop takes White Rook
+  this.move([6,3],[7,4]);//White Bishop takes Black Bishop
+  this.move([5,5],[6,5]);
+  this.move([7,4],[6,5]);//White Bishop takes White Pawn
+  this.move([3,3],[4,5]);
+  this.move([5,7],[6,6]);
+  this.move([4,5],[6,6]);//Black Knight takes White Bishop
+  this.move([7,7],[7,6]);
+  this.move([0,0],[0,5]);
+  this.move([6,5],[2,1]);//White Bishop takes Black Pawn
+  this.move([6,6],[5,4]);
+  this.move([2,1],[5,4]);//White Bishop takes Black Knight
+  this.move([1,5],[5,5]);
 }
 
 Chess.prototype.display = function(){
@@ -194,10 +172,10 @@ Chess.prototype.display = function(){
 
   var board = Array.matrix(8,8,0);
 
-  self.pieces.forEach(function(value, index){
-    var x = self.pieces[index].position[0];
-    var y = self.pieces[index].position[1];
-    board[x][y] = self.pieces[index].letter;
+  self.pieces.forEach(function(piece, index){
+    var x = piece.position[0];
+    var y = piece.position[1];
+    board[x][y] = piece.letter;
   })
   var spacer = '+---+---+---+---+---+---+---+---+\n';
     return spacer +
@@ -248,47 +226,23 @@ Piece.prototype.setPosition = function (position){
 }
 
 //@return String representation of Piece
-Piece.prototype.toString = function (){
-  if( this.name === "Queen") {
-    if(this.color === "Black") {
-      return "Q";
-    } else {
-      return "q"
+Piece.prototype.toString = function(){
+    if( this.name === "Rook") {
+      return (this.color === "Black") ? "R" : "r";
     }
-  }
-  if( this.name === "Bishop") {
-    if(this.color === "Black") {
-      return "B"
-    } else {
-      return "b"
+    if( this.name === "Knight") {
+      return (this.color === "Black") ? "N" : "n";
     }
-  }
-  if( this.name === "Rook") {
-    if(this.color === "Black") {
-      return "R"
-    } else {
-      return "r"
+    if( this.name === "Bishop") {
+      return (this.color === "Black") ? "B" : "b";
     }
-  }
-  if( this.name === "King") {
-    if(this.color === "Black") {
-      return "K"
-    } else {
-      return "k"
+    if( this.name === "Queen") {
+       return (this.color === "Black") ? "Q" : "q";
     }
-  }
-  if( this.name === "Knight") {
-    if(this.color === "Black") {
-      return "N"
-    } else {
-      return "n"
+    if( this.name === "King") {
+      return (this.color === "Black") ? "K" : "k";
     }
-  }
-  if( this.name === "Pawn") {
-    if(this.color === "Black") {
-      return "P"
-    } else {
-      return "p"
+    if( this.name === "Pawn") {
+      return (this.color === "Black") ? "P" : "p";
     }
-  }
 }
