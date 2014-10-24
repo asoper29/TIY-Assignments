@@ -349,7 +349,6 @@
      </q>.
   3) <q cite="http://seanstephenson.com/">You'll always have an ego. The moment you forget that, it will start running       the show</q>
       
-</blockquote>
 ```
 [Example 1](http://www.w3schools.com/tags/tag_q.asp) | [Example 2](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q) | [Example 3](http://www.quackit.com/html_5/tags/html_q_tag.cfm)
 
@@ -424,3 +423,80 @@
 
  * Represents a footer for the nearest section of content or the root element. Often used to identify athor of an
  * article or website.
+
+##### 3
+```html
+<input>
+  
+  Examples:
+  1)  <input type="search" id="main-q" name="q" data-placeholder="Search" data-value="" value="" />
+  2) <input><img align="absmiddle" alt="" class="ife_marker" id="input_ife_marker_0" style="border: 0pt none; width:        14px; height: 19px; cursor: pointer; display: inline;" title="Max field length is unknown">
+  3)  <input type="hidden" name="csrfmiddlewaretoken" value="" id="_persona_csrf_token" />
+  
+```
+ [Example 1](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input)
+  
+ * Input is an element sed to create interactive controls for web-based forms in order to accept data from the user.
+
+##### 4
+```html
+<address>
+  
+  Examples:
+  1) <address>
+        Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+     </address>
+  2) <address>
+      <a href="http://html5doctor.com/author/jacko">Jack Osborne</a>,
+     </address>
+  3) <address>Contact information goes here</address>
+  
+```
+ [Example 1](http://www.w3schools.com/tags/tag_address.asp) | [Example 2](http://html5doctor.com/the-address-element/) | [Example 3](http://www.techonthenet.com/html/elements/address_tag.php)
+  
+ * Defines the contact information for the author/owner of a document or an article.
+ 
+##### 5
+```html
+<article>
+  
+  Examples:
+  1) <article class="home-featured-article border-separated-article" data-article="">
+            <h3><a href="http://time.com/3532634/mark-zuckerberg-chinese-facebook/" data-event="hp-news">Mark     
+            Zuckerberg Gives Q&amp;A in Chinese</a></h3>
+            
+     </article>
+  2) <article class="home-brief-article border-separated-article home-brief-normal-split has-hero">
+            <figure class="home-brief-hero">
+                <a href="http://time.com/3530890/jeffrey-fowle-north-korea/" 
+                data-event="the-brief">
+                <img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2014/10/jeffrey-fowle.jpg?crop=718px%2C         607px%2C476px%2C476px&amp;resize=100%2C100" alt="Jeffrey Fowle"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU                     1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"/>
+            </a>
+        </figure>
+
+
+       <div class="home-brief-title-and-excerpt">
+        <h2 class="home-icons-brief "><a href="http://time.com/3530890/jeffrey-fowle-north-korea/"         
+        data-event="the-brief">North Korean Detainee Jeffrey Fowle Returns to Ohio</a>
+        </h2>
+        <p class="home-excerpt">
+            The American released from North Korean custody on Tuesday, about a half-year after he was detained after             he left a Bible at a nightclub, returned to his family in Ohio on Wednesday. Two Americans who have been              convicted of crimes in North Korea are still held
+        </p>
+       </div>
+     </article>
+  3) <article class="home-magazine-article border-separated-article">
+       <h3 class="small-home-header home-icons-article home-icons-key">
+          <a href="http://time.com/3512672/the-new-ebola-protocols/?pcd=hp-magmod"   data-event="hp-magmod" >The New              Ebola Protocols</a>
+       </h3>
+     </article>
+  
+```
+ [Example 1](http://time.com/)
+  
+ * The article tag specifies independent, self contained content. Should make sense on its own and be able to be 
+ * distributed independent of a site.
