@@ -1,0 +1,147 @@
+<style>
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+      	margin: 0;
+      	padding: 0;
+      	border: 0;
+      	font-size: 100%;
+      	font: inherit;
+      	vertical-align: baseline;
+      }  
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      body ul {
+        list-style-type: none;
+      }
+      body p {
+        font-size: 20px;
+        font-family: sans-serif;
+        line-height: 1.5;
+        color: white;
+      }
+      li.light h1 {
+        color: white;
+      }
+      li.light hr {
+        color: white;
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      li.dark h1 {
+        color:white;
+      }
+      li.dark hr {
+        color: white;
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      header {
+        margin: 2% 5% 5% 5%;;
+        color: #3594CB;
+        font-family: sans-serif;
+      }
+      #contain {
+        width: 60%;
+        margin: 0 6% 2% 0;
+        border-left: 11px solid skyblue;
+        padding-left: 5%;
+        float: right;
+      }
+      .dark {
+        background-color: #3594CB;
+        border-radius: 4px;
+        padding: 5%;
+        margin-bottom: 5%;
+      }
+      .light {
+        background-color: #6CBFEE;
+        border-radius: 4px;
+        padding: 5%;
+        margin-bottom: 5%;
+      }
+      aside.phone  {
+        float: left;
+        margin-top: -1%;
+        margin-left: 16.06%;
+        position: absolute;
+        z-index: 1;
+        width: 15%;
+      }
+      aside.monitor  {
+        width: 15%;
+        float: left;
+        margin-top: 33.5%;
+        margin-left: 16.06%;
+        z-index: 2;
+        position: absolute;
+      }
+      aside.mail  {
+        width: 15%;
+        float: left;
+        margin-top: 63%;
+        margin-left: 16.06%;
+        z-index: 2;
+        position: absolute;
+      }
+      body p.icon {
+        margin-top: 0;
+        width: 40pt;
+        height: 40pt;
+        border-radius: 50%;
+        background-color: #3594CB;
+        text-align: center;
+        border: 8px solid skyblue;
+        float: right;
+        font-size: 12pt;
+      }
+      body p.date {
+        float: left;
+        margin: 1% 0 0 20%;
+        font-size: 15pt;
+        line-height: 1pt;
+      }
+      body p.darkcaret {
+        float: left;
+        margin: -43px 0px 0 -57px;
+        color: #3594CB;
+      }
+      body p.lightcaret {
+        float: left;
+        margin: -43px 0px 0 -57px;
+        color: #6CBFEE;
+      }
+      span.fa.fa-mobile {
+        margin: 7.5% 25%;
+        color: white;
+      }
+      span.fa.fa-desktop {
+        margin: 26% 18%;
+        color: white;
+      }
+      span.fa.fa-hand-o-right {
+        margin: 20% 21%;
+        color: white;
+      }
+      .date {
+        color: gray;
+      }
+      body p.time {
+        float: left;
+        margin: 0 0 0 -23%;
+      }
+      .clock {
+        color: skyblue;
+        font-size: 4pc;
+        font-family: sans-serif;
+      }
+    </style>
