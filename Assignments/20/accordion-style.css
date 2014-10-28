@@ -1,0 +1,78 @@
+body {
+  font-family: sans-serif;
+  width: 100%;
+  margin:0;
+  padding:0;
+  color: grey;
+}
+
+.accordion {
+  list-style-type: none;
+  padding-left:20pt;
+  margin: 5% 5%;
+  padding-top: 20pt;
+}
+
+.accordion h3:before,
+.accordion h4:before {
+  padding-right: 2pt;
+}
+
+.accordion h3:before {
+  content: '\2192';
+}
+
+.accordion h3:hover:before {
+  content: '\2198';
+}
+
+.accordion h4:before {
+  content: '\2192';
+}
+
+.accordion h4:hover:before {
+  content: '\2198';
+}
+
+.accordion h5:before {
+  content: '\2192';
+}
+
+.accordion h5:hover:before {
+  content: '\2198';
+}
+
+.accordion h3 {
+  padding: 2pt 0 0 5pt;
+  border-bottom: 1px solid #ddd;
+  font-size: 2.75em;
+  font-weight: 300;
+}
+
+.accordion h4 {
+  font-size: 14pt;
+  text-transform: uppercase;
+  letter-spacing: 2pt;
+  padding: 2pt 0 0 2pt;
+}
+
+.accordion h5 {
+  font-size: 12pt;
+  text-transform: uppercase;
+  padding: 2pt 0 0 2pt;
+  margin: 0 0 0 2pt;
+  letter-spacing: 2pt;
+}
+
+ul li {
+  margin-bottom:10pt;
+  padding-bottom:20pt;
+  margin-top:50pt;
+}
+
+.accordion li > :first-child ~ * {
+  display: none; /* targets nested ul and its children */
+}
+.accordion li.accordion-open > :first-child ~ * {
+  display: block;
+}
