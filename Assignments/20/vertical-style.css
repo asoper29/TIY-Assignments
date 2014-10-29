@@ -17,7 +17,7 @@ body {
     width: 80%; margin: auto;
 }
 
-ol.timeline {
+.timeline {
     border-left: 0.5em solid;
     border-color: rgb(107, 191, 238);
     padding-left: 2em;
@@ -44,7 +44,7 @@ ol.timeline {
     border-radius: 50%;
 
     position: absolute;
-    left: -3.5em;
+    right: 100%; margin-right: 1em;
 }
 .timeline > li.call:before {
     content: "\260E";
@@ -61,10 +61,10 @@ ol.timeline {
 
 .timeline > li time {
     display: block;
-    float: left;
-    position: absolute;
-    left: -9em;
     text-align: right;
+
+    position: absolute;
+    right: 100%; margin-right: 5em;
 }
 .timeline > li time > * {
     display: block;
@@ -75,7 +75,7 @@ ol.timeline {
 }
 .timeline > li time big {
     color: rgb(107, 191, 238);
-    font-size: 200%;
+    font-size: 300%;
 }
 .timeline > li:nth-child(even) time big {
     color: rgb(52, 148, 203); /* dark blue */
@@ -90,7 +90,8 @@ ol.timeline {
     content: "\25C0";
     color: rgb(107, 191, 238);
     position: absolute;
-    top: 0.75em; left: -0.6em;
+    top: 0.75em; right: 100%;
+    letter-spacing: -0.2em;
 }
 /* http://css-tricks.com/how-nth-child-works/ */
 .timeline > li:nth-child(even) article {
@@ -104,4 +105,26 @@ ol.timeline {
     padding-bottom: 5pt;
     border-bottom: 1pt dotted;
     margin-bottom: 10pt;
+}
+
+@media (max-width: 1048px) {
+    .timeline > li time big {
+        font-size: 200%;
+    }
+}
+@media (max-width: 768px) {
+    .timeline {
+        border: none;
+    }
+    .timeline > li:before {
+        position: static;
+        float: right;
+    }
+    .timeline > li time {
+        position: static;
+        float: left;
+    }
+    .timeline > li article {
+        clear: both;
+    }
 }
