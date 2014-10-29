@@ -1,0 +1,35 @@
+header {
+    background-image: url(http://static.tumblr.com/3c7cd96cde56779343d2e9a22afec085/w5gxxfv/oCrn8vkw8/tumblr_static_9cxjqqnfamsccsg4ow84sg8kg.jpg);
+    background-repeat: no-repeat;
+    height: 399px;
+}
+#container {
+    width: 75%;
+    margin: auto;
+    min-width: 500px;
+    max-width: 1000px;
+}
+#logo {
+    background-image: url(http://static.tumblr.com/37ca133c1a84d5b7856c51a7682df3e9/w5gxxfv/6j4n8vkw8/tumblr_static_20mtuue2w17o0sksogs0c44cw.png);
+    margin-top: -50px;
+    border: 5pt solid white;
+    border-radius: 50%;
+    width: 90px; height: 90px;
+    background-size: contain;
+}
+aside {
+    float: left;
+    width: 160px;
+}
+section {
+    width: 60%;
+    margin-left: auto;
+}
+
+#time1 {
+  height: 20px;
+}
+
+#time 2{
+  height: 20px;
+}

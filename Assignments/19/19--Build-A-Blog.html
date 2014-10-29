@@ -1,53 +1,12 @@
 <html>
   <head>
     <title>This is our rendering of The Iron Yard Orlando... Not quite.</title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
-    <style>
-
-header {
-    background-image: url(http://static.tumblr.com/3c7cd96cde56779343d2e9a22afec085/w5gxxfv/oCrn8vkw8/tumblr_static_9cxjqqnfamsccsg4ow84sg8kg.jpg);
-    background-repeat: no-repeat;
-    height: 399px;
-}
-#container {
-    width: 75%;
-    margin: auto;
-    min-width: 500px;
-    max-width: 1000px;
-}
-#logo {
-    background-image: url(http://static.tumblr.com/37ca133c1a84d5b7856c51a7682df3e9/w5gxxfv/6j4n8vkw8/tumblr_static_20mtuue2w17o0sksogs0c44cw.png);
-    margin-top: -50px;
-    border: 5pt solid white;
-    border-radius: 50%;
-    width: 90px; height: 90px;
-    background-size: contain;
-}
-aside {
-    float: left;
-    width: 160px;
-}
-section {
-    width: 60%;
-    margin-left: auto;
-}
-    </style>
-    <script>
-/**
- * @param Number? String? I dunno! datePosted
- * @param Same problem here... now
- * @return Number of hours from `datePosted` until `now`
- */
-function hoursAgo(datePosted, now){
-  // If only there was a way to represent Dates and Times in JavaScript!
-  return (now - datePosted).toHours(); // Maybe?
-}
-
-
-    </script>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="19--Build-A-Blog.css">
+    <script src="19--Build-A-Blog.js"></script>
   </head>
-  <body>
+  <body onload="print">
     <header>
         <nav><a href="#">Edit Theme</a> <a href="#">Follow</a> <a href="#">Dashboard</a></nav>
     </header>
@@ -72,9 +31,10 @@ function hoursAgo(datePosted, now){
           <nav>
             <a href="#" style="color: grey;">&#9829;</a>
             <a href="#">&#8644;</a>
+            <p><time id="time1"></time></p>
           </nav>
 
-          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">2 hours ago</a></nav>
+          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"></a></nav>
         </article>
         <article>
           <h1><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
@@ -91,7 +51,7 @@ function hoursAgo(datePosted, now){
             <a href="#" class="fa fa-share-square-o">share this</a>
           </nav>
 
-          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">2014-10-22 13:00:00</a></nav>
+          <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard"><time id="time2"></time></a></nav>
         </article>
       </section>
     </div>
