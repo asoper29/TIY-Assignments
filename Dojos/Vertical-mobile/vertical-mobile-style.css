@@ -1,0 +1,30 @@
+#container {
+  width: 90%;
+  margin: auto;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0 0 0 -25pt;
+}
+
+
+.timeline > li article h3 {
+  padding-bottom:.6em;
+  border-bottom: 1px dotted white;
+  color: white;
+  text-align: center;
+}
+
+.timeline > li article {
+    background-color: rgb(107, 191, 238);
+    margin: 0;
+    padding: 5pt 2em;
+    border-radius: 5pt;
+    color: white;
+    text-align: center;
+}
+
+.timeline > li:nth-child(even) article {
+  background-color: rgb(52, 148, 203);
+}
