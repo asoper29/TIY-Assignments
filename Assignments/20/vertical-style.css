@@ -72,6 +72,7 @@ body {
 .timeline > li time small {
     color: #BDD0DC;
     font-size: 80%;
+    margin: 0 0.3em;
 }
 .timeline > li time big {
     color: rgb(107, 191, 238);
@@ -113,8 +114,9 @@ body {
     }
 }
 @media (max-width: 768px) {
-    .timeline {
+  .timeline {
         border: none;
+        margin-left: -2em;
     }
     .timeline > li:before {
         position: static;
@@ -123,8 +125,15 @@ body {
     .timeline > li time {
         position: static;
         float: left;
+        padding-bottom: 15px;
+        margin: 0 auto;
     }
     .timeline > li article {
         clear: both;
+    }
+    .timeline > li article:after {
+      content: "\25B2";
+      top: 3.4em;
+      left: 2.1em;
     }
 }
