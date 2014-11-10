@@ -1,0 +1,55 @@
+ul {
+  list-style: none;
+}
+
+img {
+  border: 0.3em solid #47a3da;
+  padding: 5em;
+  margin: 20pt 35pt;
+}
+
+.back {
+  display: none;
+}
+
+.content {
+  height: 528px;
+  width: 515px;
+  margin: 0pt;
+}
+span {
+  float: right;
+  margin: 23pt -42pt;
+  text-align: center;
+  border-left: 0.3em solid #47a3da;
+  border-bottom: 0.3em solid #47a3da;
+  height: 33pt;
+  width: 33pt;
+  color: #47a3da;
+}
+
+.icons li{
+  border: 0.3em solid #47a3da;
+  width: 50px;
+  height: 50px;
+  display: inline;
+  float: left;
+  margin: 0 auto;
+}
+
+.fa-square {
+  color: blue;
+  -webkit-text-stroke: 1px white;
+}
+
+@media (min-width: 738px){
+
+}
+
+@media (min-width: 880px){
+
+}
+
+@media (min-width: 1090px){
+
+}
