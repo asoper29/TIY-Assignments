@@ -1,22 +1,19 @@
-// gulp.task(name[, deps], fn);
+var gulp = require('gulp'),
+    connect = require('gulp-connect');
 
-var gulp = require('gulp');
-connect = require('gulp-connect');
-
-
-gulp.task('connect', function() {
+gulp.task('connect', function(){
   connect.server({
     livereload: true
   });
 });
 
-gulp.task('html', function () {
-  gulp.src('~/*.html')
+gulp.task('reload', function(){
+  gulp.src('./Assignments/**/*.*')
     .pipe(connect.reload());
 });
 
-gulp.task('watch', function () {
-  gulp.watch(['./*.html'], ['html']);
+gulp.task('watch', function(){
+  gulp.watch(['./Assignments/**/*.*'], ['reload']);
 });
 
 gulp.task('default', ['connect', 'watch']);
