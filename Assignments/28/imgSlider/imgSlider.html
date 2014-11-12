@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Width Image Slider</title>
+  <link href="imgSlider.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <section class="main">
+      <ul id="slider">
+        <li id="slide1" class="active slide"> <img src="karma1.jpg"></li>
+        <li id="slide2" class="hidden slide"> <img src="karma2.jpg"></li>
+        <li id="slide3" class="hidden slide"> <img src="karma3.jpg"></li>
+        <li id="slide4" class="hidden slide"> <img src="karma4.jpg"></li>
+        <li id="slide5" class="hidden slide"> <img src="karma5.jpg"></li>
+      </ul>
+      <nav>
+        <ul>
+          <li class="buttons current" id="button1">
+          <li class="buttons" id="button2">
+          <li class="buttons" id="button3">
+          <li class="buttons" id="button4">
+          <li class="buttons" id="button5">
+        </ul>
+      </nav>
+      <nav>
+        <span><img class="left hidden" src="fingerPointingLeft.jpg"></span>
+      </nav>
+      <nav>
+        <span><img class="right" src="fingerPointingRight.jpg"></span>
+      </nav>
+    </section>
+  </div>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="imgSlider.js"></script>
+</body>
+</html>
