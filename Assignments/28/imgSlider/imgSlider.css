@@ -1,17 +1,19 @@
 body {
   background-color: #eee;
   text-align: center;
+  padding-bottom: 3%;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 .slide img{
   height: 400px;
   width: 400px;
   border-radius: 5%;
-  margin: 10% 0;
+  margin: 5% 0 5% 0;
 }
 
 .hidden {
