@@ -9,24 +9,24 @@
     <body>
       <div class="container">
         <div class="main">
-          <form method="POST" id="ariForm">
+          <form method="POST" id="asopForm">
             <div id="col1" class="col-sm-6 col-md-4">
               <a><label for="first_name">First Name</label></a>
-              <input type="text" id="first_name" name="first_name" placeholder="Bruce" required>
+              <input type="text" id="first_name" name="first_name" placeholder="John" required>
               </input>
               <label for="last_name">Last Name</label>
-              <input type="text" id="last_name" name="last_name" placeholder="Wayne" required>
+              <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
               </input>
-              <label for="email">email address</label>
-              <input type="email" id="email" name="email" placeholder="Bruce@WayneEnterprises.com" required></input>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="John@Doe.com" required></input>
               <label for="country">Country</label>
               <select name="country" id="county">
                 <option>Choose a Country</option>
                 <option value="United States">United States</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Bulgaria">Bulgaria</option>
-                <option value="Cuba">Cuba</option>
+                <option value="Canada">Canada</option>
                 <option value="Mexico">Mexico</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Germany">Germany</option>
               </select>
               <section class="textWrap">
               <label for="biography">Biography</label>
@@ -43,31 +43,31 @@
               <label for="occupation">Occupation</label>
               <select name="occupation" id="occupation">
                 <option>Choose an Occupation</option>
-                <option value="superhero">Super Hero</option>
-                <option value="ninja">Ninja</option>
-                <option value="supervillian">Super Villian</option>
+                <option value="engineer">Engineer</option>
                 <option value="coder">Coder</option>
+                <option value="hero">Super Hero</option>
+                <option value="villain">Super Villain</option>
               </select>
               <label for="dogsname">Biggest Secret?</label>
               <input type="password" id="secret"></input>
               <label for="gadget">Favorite Gadget</label>
-              <input type="text" id="gadget" placeholder="batarang"></input>
+              <input type="text" id="gadget" placeholder="Laptop"></input>
             </div>
             <div id="col3" class="col-sm-12 col-md-4">
               <label for="talent">Type of Talent</label>
               <select name="talent" id="talent">
                 <option>Choose a Talent</option>
-                <option value="juggling">Juggling</option>
-                <option value="kazoo">Kazoo</option>
-                <option value="unicycling">Unicycle as Darth Vader</option>
-                <option value="impressions">Impressions</option>
+                <option value="juggling">Juggling chainsaws</option>
+                <option value="guitar">Air guitar</option>
+                <option value="jumping">Jumping through a ring of fire</option>
+                <option value="charades">Epic charades player</option>
               </select>
               <label for="drink">Favorite Drink</label>
-              <input type="text" id="drink" placeholder="beer"></input>
+              <input type="text" id="drink" placeholder="Green Tea"></input>
               <label for="power">Special Power</label>
-              <input type="text" id="power" placeholder="super detective"></input>
+              <input type="text" id="power" placeholder="Mind Taking"></input>
               <label for="weapon">Weapon of Choice</label>
-              <input type="text" id="weapon" placeholder="the night"></input>
+              <input type="text" id="weapon" placeholder="The Mind"></input>
               <section class="textWrap">
                 <label for="comments">Comments</label>
                 <textarea type="text" id="comments"></textarea>
@@ -81,7 +81,7 @@
       </div>
       <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
       <script>
-        $('#ariForm').submit(function( event ){
+        $('#asopForm').submit(function( event ){
           event.preventDefault();
           console.log($(this).serializeArray());
         })
