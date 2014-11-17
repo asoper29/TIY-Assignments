@@ -1,53 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Responsive Multi-Column Form</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<!DOCTYPE>
+  <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="multiForm.css">
+    </head>
 
-      body {
-        background-color: #47A3DA;
-      }
-
-      .col-md-4 {
-        padding: 5% 3%;
-      }
-
-      h3 {
-        color: #fff;
-        text-transform: uppercase;
-      }
-
-    </style>
-  </head>
-  <body>
-    <div class="row">
-      <div class="col-md-4">
-        <h3>first name</h3>
-        <div class="input-group">
-          <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
-        </div>
-        <h3>last name</h3>
-        <div class="input-group">
-          <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
+    <body>
+      <div class="container">
+        <div class="main">
+          <form method="POST" id="asopForm">
+            <div id="col1" class="col-sm-6 col-md-4">
+              <a><label for="first_name">First Name</label></a>
+              <input type="text" id="first_name" name="first_name" placeholder="John" required>
+              </input>
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
+              </input>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="John@Doe.com" required></input>
+              <label for="country">Country</label>
+              <select name="country" id="county">
+                <option>Choose a Country</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Germany">Germany</option>
+              </select>
+              <section class="textWrap">
+              <label for="biography">Biography</label>
+              <textarea type="text" id="biography"></textarea>
+            </section>
+            </div>
+            <div id="col2" class="col-sm-6 col-md-4">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phoneNum" name="phoneNum" placeholder="407-555-5555" required></input>
+              <section class="textWrap">
+                <label for="affiliations">Affiliations</label>
+                <textarea type="text" id="affiliations"></textarea>
+              </section>
+              <label for="occupation">Occupation</label>
+              <select name="occupation" id="occupation">
+                <option>Choose an Occupation</option>
+                <option value="engineer">Engineer</option>
+                <option value="coder">Coder</option>
+                <option value="hero">Super Hero</option>
+                <option value="villain">Super Villain</option>
+              </select>
+              <label for="dogsname">Biggest Secret?</label>
+              <input type="password" id="secret"></input>
+              <label for="gadget">Favorite Gadget</label>
+              <input type="text" id="gadget" placeholder="Laptop"></input>
+            </div>
+            <div id="col3" class="col-sm-12 col-md-4">
+              <label for="talent">Type of Talent</label>
+              <select name="talent" id="talent">
+                <option>Choose a Talent</option>
+                <option value="juggling">Juggling chainsaws</option>
+                <option value="guitar">Air guitar</option>
+                <option value="jumping">Jumping through a ring of fire</option>
+                <option value="charades">Epic charades player</option>
+              </select>
+              <label for="drink">Favorite Drink</label>
+              <input type="text" id="drink" placeholder="Green Tea"></input>
+              <label for="power">Special Power</label>
+              <input type="text" id="power" placeholder="Mind Taking"></input>
+              <label for="weapon">Weapon of Choice</label>
+              <input type="text" id="weapon" placeholder="The Mind"></input>
+              <section class="textWrap">
+                <label for="comments">Comments</label>
+                <textarea type="text" id="comments"></textarea>
+              </section>
+            </div>
+            <div id="button-submit">
+              <input class="submitBTN" type="submit" value="Send Your Data"></input>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="col-md-4">
-        <h3>Phone Number</h3>
-        <div class="input-group">
-          <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="input-group">
-          <span class="input-group-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+      <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script>
+        $('#asopForm').submit(function( event ){
+          event.preventDefault();
+          console.log($(this).serializeArray());
+        })
+      </script>
+    </body>
+  </html>
