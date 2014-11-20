@@ -5,8 +5,10 @@
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
+.img-rounded {
+  height: 48px;
+  width: 48px;
+  float: left;
 }
 
 .thumbnail img.pull-right {

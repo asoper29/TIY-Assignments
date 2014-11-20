@@ -2,7 +2,7 @@
 
 angular.module('github-comments')
   .controller('MainCtrl', function($http, $interpolate, $cookies){
-      var apiUrl = 'https://api.github.com/gists/02be30f604c33f83b536/comments',
+      var apiUrl = 'https://api.github.com/repos/TheIronYard--Orlando/FEE--2014--FALL/issues/416/comments',
           apiKeyTpl = $interpolate('?access_token={{key}}');
 
       var self = this;
